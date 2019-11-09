@@ -73,4 +73,19 @@ RSpec.describe Food do
     expect(huevos.to_s).to eq("{Huevos, 13.0, 1.1, 11.0, 4.2, 5.7}")
   end
 
+  context "Pruebas sobre valores calóricos" do
+    before :each do
+      @huevos = Food::Food.new("Huevos",13.0, 1.1, 11.0, 4.2, 5.7)
+      @carne_de_vaca = Food::Food.new("Carne de vaca",21.1, 0.0, 3.1, 50.0, 164.0)
+      @cerveza = Food::Food.new("Cerveza", 0.5, 3.6, 0.0, 0.24, 0.22)
+      @cafe = Food::Food.new("Café",0.1, 0.0, 0.0, 0.4, 0.3)
+    end
+
+    it "El valor calórico de un alimento es el correcto" do
+      expect(@huevos.energetic_value).to eq(155.4)
+      expect(@carne_de_vaca.energetic_value).to eq(112.3)
+      expect(@cerveza.energetic_value).to eq(16.4)
+      expect(@cafe.energetic_value).to eq(0.4)
+    end
+  end
 end #describe
