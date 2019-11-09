@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Florentín Pérez González"]
   spec.email         = ["alu0101100654@ull.edu.es"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Clase ruby para la representación de alimentos}
+  spec.description   = %q{Representación de alimentos con sus nutrientes}
+  spec.homepage      = "https://github.com/ULL-ESIT-LPP-1920/tdd-alu0101100654"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
