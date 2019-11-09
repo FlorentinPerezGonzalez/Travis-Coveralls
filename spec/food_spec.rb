@@ -21,4 +21,7 @@ RSpec.describe Food do
     it "Existe un método para obtener el alimento formateado" do
       expect(@basic_food).to respond_to(:to_s)
     end
+    it "Existe un método para obtener el valor energético de un alimento" do
+      expect(@basic_food).to respond_to(:energetic_value)
+    end
 end
