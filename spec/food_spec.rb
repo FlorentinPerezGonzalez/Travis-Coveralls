@@ -1,9 +1,15 @@
+require 'spec_helper'
 RSpec.describe Food do
   it "has a version number" do
     expect(Food::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
-  end
+  context "#Existencias de métodos"
+    before :each do
+      @basic_food = Food::Food.new()
+    end
+
+    it "Existe un método para obtener el nombre del alimento" do
+      expect(@basic_food).to respond_to(:name)
+    end
 end
