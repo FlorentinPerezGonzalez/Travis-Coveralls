@@ -15,4 +15,7 @@ RSpec.describe Food do
     it "Existe un método para obtener las emisiones de gases de efecto invernadero" do
       expect(@basic_food).to respond_to(:gases)
     end
+    it "Existe un método para obtener el terreno utilizado" do
+      expect(@basic_food).to respond_to(:land_use)
+    end
 end
