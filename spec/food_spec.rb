@@ -33,4 +33,13 @@ RSpec.describe Food do
     it "Existe un método para obtener los carbohidratos de un alimento" do
       expect(@basic_food).to respond_to(:carbohydrates)
     end
+
+  context "Funcionamiento de métodos getters"
+    before :each do
+      @basic_food = Food::Food.new()
+    end
+
+    it "El nombre del alimento es el correcto" do
+      expect(@basic_food.name).to eq("Huevos")
+    end
 end
