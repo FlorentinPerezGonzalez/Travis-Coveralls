@@ -6,7 +6,7 @@ RSpec.describe Food do
 
   context "#Existencias de métodos"
     before :each do
-      @basic_food = Food::Food.new("Huevos",13.0, 1.1,11.0,4.2)
+      @basic_food = Food::Food.new("Huevos",13.0, 1.1,11.0,4.2,5.7)
     end
 
     it "Existe un método para obtener el nombre del alimento" do
@@ -36,7 +36,7 @@ RSpec.describe Food do
 
   context "Funcionamiento de métodos getters asociados a las características íntegras de los alimentos"
     before :each do
-      @basic_food = Food::Food.new("Huevos",13.0, 1.1,11.0,4.2)
+      @basic_food = Food::Food.new("Huevos",13.0, 1.1,11.0,4.2,5.7)
     end
 
     it "El nombre del alimento es el correcto" do
@@ -54,10 +54,13 @@ RSpec.describe Food do
 
   context "Funcionamiento de métodos getters asociados a las implicaciones medioambientales de los alimentos"
     before :each do
-      @basic_food = Food::Food.new("Huevos",13.0, 1.1,11.0,4.2)
+      @basic_food = Food::Food.new("Huevos",13.0, 1.1,11.0,4.2,5.7)
     end
 
     it "La cantidad de gases de efecto invernadero asociados a la producción de un kilo del alimento es la correcta" do
       expect(@basic_food.gases).to eq(4.2)
+    end
+    it "La cantidad de terreno en m2 utilizados para la producción de un kilo del alimento es la correcta" do
+      expect(@basic_food.land_use).to eq(5.7)
     end
 end
