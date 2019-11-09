@@ -8,6 +8,7 @@ module Food
             @carbohydrates = carbohydrates
             @lipids = lipids
             @gases = gases
+            @land_use = land_use
         end
 
         def to_s
