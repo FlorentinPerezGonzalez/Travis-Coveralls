@@ -5,5 +5,9 @@ module Food
         def to_s
 
         end
+
+        def energetic_value
+
+        end
     end
 end
