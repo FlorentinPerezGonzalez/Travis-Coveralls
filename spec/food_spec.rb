@@ -4,7 +4,7 @@ RSpec.describe Food do
     expect(Food::VERSION).not_to be nil
   end
 
-  context "#Existencias de métodos"
+  context "Existencias de métodos" do
     before :each do
       @basic_food = Food::Food.new("Huevos",13.0, 1.1,11.0,4.2,5.7)
     end
@@ -33,8 +33,9 @@ RSpec.describe Food do
     it "Existe un método para obtener los carbohidratos de un alimento" do
       expect(@basic_food).to respond_to(:carbohydrates)
     end
+  end
 
-  context "Funcionamiento de métodos getters asociados a las características íntegras de los alimentos"
+  context "Funcionamiento de métodos getters asociados a las características íntegras de los alimentos" do
     before :each do
       @basic_food = Food::Food.new("Huevos",13.0, 1.1,11.0,4.2,5.7)
     end
@@ -51,8 +52,9 @@ RSpec.describe Food do
     it "La cantidad de lípidos del alimento es la correcta" do
       expect(@basic_food.lipids).to eq(11.0)
     end
+  end #context
 
-  context "Funcionamiento de métodos getters asociados a las implicaciones medioambientales de los alimentos"
+  context "Funcionamiento de métodos getters asociados a las implicaciones medioambientales de los alimentos" do
     before :each do
       @basic_food = Food::Food.new("Huevos",13.0, 1.1,11.0,4.2,5.7)
     end
@@ -63,4 +65,11 @@ RSpec.describe Food do
     it "La cantidad de terreno en m2 utilizados para la producción de un kilo del alimento es la correcta" do
       expect(@basic_food.land_use).to eq(5.7)
     end
-end
+  end #context
+
+
+  it "La salida formateada de un alimento es la correcta" do
+    expect(@basic_food.to_s).to eq("{Huevos, 13.0, 1.1, 11.0, 4.2, 5.7}")
+  end
+
+end #describe
