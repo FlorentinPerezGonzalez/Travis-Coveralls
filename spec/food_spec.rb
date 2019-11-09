@@ -6,7 +6,7 @@ RSpec.describe Food do
 
   context "#Existencias de métodos"
     before :each do
-      @basic_food = Food::Food.new()
+      @basic_food = Food::Food.new("Huevos")
     end
 
     it "Existe un método para obtener el nombre del alimento" do
@@ -36,7 +36,7 @@ RSpec.describe Food do
 
   context "Funcionamiento de métodos getters"
     before :each do
-      @basic_food = Food::Food.new()
+      @basic_food = Food::Food.new("Huevos")
     end
 
     it "El nombre del alimento es el correcto" do
