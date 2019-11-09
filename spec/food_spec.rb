@@ -69,7 +69,8 @@ RSpec.describe Food do
 
 
   it "La salida formateada de un alimento es la correcta" do
-    expect(@basic_food.to_s).to eq("{Huevos, 13.0, 1.1, 11.0, 4.2, 5.7}")
+    huevos = Food::Food.new("Huevos",13.0, 1.1,11.0,4.2,5.7)
+    expect(huevos.to_s).to eq("{Huevos, 13.0, 1.1, 11.0, 4.2, 5.7}")
   end
 
 end #describe

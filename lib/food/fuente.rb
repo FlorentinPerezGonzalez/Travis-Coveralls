@@ -12,7 +12,7 @@ module Food
         end
 
         def to_s
-
+            "{#@name, #@protein, #@carbohydrates, #@lipids, #@gases, #@land_use}"
         end
 
         def energetic_value
