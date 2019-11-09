@@ -1,6 +1,6 @@
 module Food
     class Food
-        attr_reader :name, :gases, :land_use, :protein, :lipids
+        attr_reader :name, :gases, :land_use, :protein, :lipids, :carbohydrates
 
         def to_s
 
