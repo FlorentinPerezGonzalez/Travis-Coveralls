@@ -4,6 +4,7 @@ module Food
 
         def initialize(name, protein)
             @name = name
+            @protein = protein
         end
 
         def to_s
