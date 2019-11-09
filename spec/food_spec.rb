@@ -12,4 +12,7 @@ RSpec.describe Food do
     it "Existe un método para obtener el nombre del alimento" do
       expect(@basic_food).to respond_to(:name)
     end
+    it "Existe un método para obtener las emisiones de gases de efecto invernadero" do
+      expect(@basic_food).to respond_to(:gases)
+    end
 end
