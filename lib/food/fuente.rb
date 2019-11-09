@@ -7,6 +7,7 @@ module Food
             @protein = protein
             @carbohydrates = carbohydrates
             @lipids = lipids
+            @gases = gases
         end
 
         def to_s
