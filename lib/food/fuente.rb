@@ -2,7 +2,7 @@ module Food
     class Food
         attr_reader :name, :gases, :land_use, :protein, :lipids, :carbohydrates
 
-        def initialize(name)
+        def initialize(name, protein)
             @name = name
         end
 
