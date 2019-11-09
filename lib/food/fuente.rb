@@ -16,7 +16,7 @@ module Food
         end
 
         def energetic_value
-
+            (value = @protein*4.0 + @carbohydrates*4.0 + @lipids*9).truncate(3)
         end
 
     end
