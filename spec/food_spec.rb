@@ -19,6 +19,6 @@ RSpec.describe Food do
       expect(@basic_food).to respond_to(:land_use)
     end
     it "Existe un método para obtener el alimento formateado" do
-      expect(@basic_food).to respond_to(to_s)
+      expect(@basic_food).to respond_to(:to_s)
     end
 end
