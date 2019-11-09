@@ -6,6 +6,7 @@ module Food
             @name = name
             @protein = protein
             @carbohydrates = carbohydrates
+            @lipids = lipids
         end
 
         def to_s
