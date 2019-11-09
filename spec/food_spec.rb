@@ -30,4 +30,7 @@ RSpec.describe Food do
     it "Existe un método para obtener los lípidos de un alimento" do
       expect(@basic_food).to respond_to(:lipids)
     end
+    it "Existe un método para obtener los carbohidratos de un alimento" do
+      expect(@basic_food).to respond_to(:carbohydrates)
+    end
 end
