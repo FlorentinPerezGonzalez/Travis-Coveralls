@@ -96,7 +96,7 @@ RSpec.describe Food do
       @pollo = Food::Food.new({:name => 'Pollo', :protein => 20.6, :carbohydrates => 0.0, :lipids => 5.6, :gas => 5.7, :land_use => 7.1})
       @cerdo = Food::Food.new({:name => 'Cerdo', :protein => 21.5, :carbohydrates => 0.0, :lipids => 6.3, :gas => 7.6, :land_use => 11.0})
       @cerveza = Food::Food.new({:name => 'Cerveza', :protein => 0.5, :carbohydrates => 3.6, :lipids => 0.0, :gas => 0.24, :land_use => 0.22})
-      @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 7.9})
+      @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
       @cafe = Food::Food.new({:name => 'Cafe', :protein => 0.1, :carbohydrates => 0.0, :lipids => 0.0, :gas => 0.4, :land_use => 0.3})
       @tofu = Food::Food.new({:name => 'Tofu', :protein => 8.0, :carbohydrates => 1.9, :lipids => 4.8, :gas => 2.0, :land_use => 2.2})
     end
@@ -117,6 +117,14 @@ RSpec.describe Food do
         solution = solution.zip(x[:food].portion_impact(x[:protein_grams])).map { |a, b| a + b}
       end
       expect(solution).to eq([17.606,23.954])
+    end
+    it "Se calcula correctamente el impacto ambiental de una mujer adulta" do
+      solution = [0.0, 0.0]
+      mujer = [{:food => @lentejas, :protein_grams => 20}, {:food => @tofu, :protein_grams => 13}, {:food => @nuez, :protein_grams => 7}, {:food => @cafe, :protein_grams => 1}]
+      mujer.each do |x|
+        solution = solution.zip(x[:food].portion_impact(x[:protein_grams])).map { |a, b| a + b}
+      end
+      expect(solution).to eq([7.695,12.234])
     end
   end
 end #describe
