@@ -31,11 +31,6 @@ Una vez instanciado, cada objeto sirve como una representación abstracta de los
 
 Adicionalmente, el usuario puede hacer uso de `portion_impact` para obtener el impacto medioambiental de una porción del alimento que represente el objeto. Esta método devuelve un array de dos elementos numéricos donde el primero se corresponde con el impacto en gases de efecto invernadero y el segundo con la cantidad de metros cuadrados de tierra necesaria para la creación de la porción. Para su correcto funcionamiento, el método debe recibir un único atributo, un valor númerico que indica los gramos de proteínas que contendrá la supuesta porción.
 
-    <pre>2.6.3 :002 &gt; @basic_food.portion_impact(100)
- =&gt; [0.32308e2, 0.43846e2] <br>
-2.6.3 :003 &gt; </pre>
-
-
 ## Desarrollo
 
 Las depedencias pueden ser instaladas mediante la ejecución de `bin/setup`. Las pruebas pueden ser ejecutadas mediante el `rake spec`. De igual manera puede hacerse uso de `bin/console` para una trabajar experimentalmente de forma dinámica.
