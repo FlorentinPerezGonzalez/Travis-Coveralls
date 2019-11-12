@@ -1,4 +1,4 @@
-##Florentín Pérez González 13/11/19
+## Florentín Pérez González 13/11/19
 # Gema: Food
 
 Food es una gema que permite la utilización de una clase cuyos instancias son, en la práctica, simulaciones de alimentos. Estos se caracterizarán por una definición basada en la cantidad de nutrientes (proteínas, lípidos y carbohidratos), así como la media de gases de efecto invernadero (en kg) generados para la producción del correspondiente alimento y los metros cuadrados necesarios para su producción anual. 
