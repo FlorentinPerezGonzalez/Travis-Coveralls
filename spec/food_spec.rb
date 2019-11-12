@@ -110,5 +110,13 @@ RSpec.describe Food do
     it "El método que calcula proporciones basadas en las proteínas funciona correctamente" do
       expect(@huevos.portion_impact(26)).to eq([8.4, 11.4])
     end
+    it "Se calcula correctamente el impacto ambiental de un hombre adulto" do
+      solution = [0.0, 0.0]
+      hombre = [{:food => @huevos, :protein_grams => 15}, {:food => @cerdo, :protein_grams => 23}, {:food => @pollo, :protein_grams => 15}, {:food => @cerveza, :protein_grams => 1}]
+      hombre.each do |x|
+        solution = solution.zip(x[:food].portion_impact(x[:protein_grams])).map { |a, b| a + b}
+      end
+      expect(solution).to eq([17.606,23.954])
+    end
   end
 end #describe

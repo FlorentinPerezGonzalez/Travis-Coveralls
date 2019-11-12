@@ -21,7 +21,17 @@ module Food
         end
 
         def portion_impact(protein_grams)
+            [BigDecimal("#{portion_impact_co2(protein_grams)}"), BigDecimal("#{portion_impact_land(protein_grams)}")]
+        end
 
+        private
+
+        def portion_impact_co2(protein_grams)
+            ((protein_grams * 100).round * (@gases * 100).round / (@protein * 100) / 100).round(3)
+        end
+
+        def portion_impact_land(protein_grams)
+            ((protein_grams * 100).round * (@land_use * 100).round / (@protein * 100) / 100).round(3)
         end
     end
 end

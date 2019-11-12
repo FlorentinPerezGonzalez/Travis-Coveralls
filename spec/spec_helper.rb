@@ -1,3 +1,4 @@
+require 'bigdecimal'
 require "bundler/setup"
 require "food"
 
