@@ -88,4 +88,21 @@ RSpec.describe Food do
       expect(@cafe.energetic_value).to eq(0.4)
     end
   end
+
+  context "Pruebas sobre el cálculo medioambiental de un hombre y una mujer adultas (20-39 años)" do
+    before :each do
+      @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
+      @nuez = Food::Food.new({:name => 'Nuez', :protein => 20.0, :carbohydrates => 21.1, :lipids => 54.0, :gas => 0.3, :land_use => 7.9})
+      @pollo = Food::Food.new({:name => 'Pollo', :protein => 20.6, :carbohydrates => 0.0, :lipids => 5.6, :gas => 5.7, :land_use => 7.1})
+      @cerdo = Food::Food.new({:name => 'Cerdo', :protein => 21.5, :carbohydrates => 0.0, :lipids => 6.3, :gas => 7.6, :land_use => 11.0})
+      @cerveza = Food::Food.new({:name => 'Cerveza', :protein => 0.5, :carbohydrates => 3.6, :lipids => 0.0, :gas => 0.24, :land_use => 0.22})
+      @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 7.9})
+      @cafe = Food::Food.new({:name => 'Cafe', :protein => 0.1, :carbohydrates => 0.0, :lipids => 0.0, :gas => 0.4, :land_use => 0.3})
+      @tofu = Food::Food.new({:name => 'Tofu', :protein => 8.0, :carbohydrates => 1.9, :lipids => 4.8, :gas => 2.0, :land_use => 2.2})
+    end
+
+    it "Existe un método para calcular proporciones basadas en las proteínas" do
+      expect(@huevos).to respond_to(:portion_impact)
+    end
+  end
 end #describe
