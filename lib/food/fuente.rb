@@ -20,7 +20,7 @@ module Food
             (value = @protein*4.0 + @carbohydrates*4.0 + @lipids*9).truncate(3)
         end
 
-        def portion_impact
+        def portion_impact(protein_grams)
 
         end
     end
