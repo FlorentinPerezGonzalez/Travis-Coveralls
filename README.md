@@ -25,18 +25,22 @@ La recreación de alimentos se realiza mediante la instanciación de objetos de 
 En la siguiente línea se muestra un ejemplo:
 
 ```ruby
-    @basic_food = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
+    basic_food = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
 ```
 Una vez instanciado, cada objeto sirve como una representación abstracta de los alimentos que se hayan decidido recrear. El usuario puede, además, obtener los datos definidos para cada objeto a través de métodos "Getters" del mismo nombre que reciben los atributos. De igual manera, el usuario puede hacer uso del método `energetic_value` para obtener el aporte energético del alimento.
 
 Adicionalmente, el usuario puede hacer uso de `portion_impact` para obtener el impacto medioambiental de una porción del alimento que represente el objeto. Esta método devuelve un array de dos elementos numéricos donde el primero se corresponde con el impacto en gases de efecto invernadero y el segundo con la cantidad de metros cuadrados de tierra necesaria para la creación de la porción. Para su correcto funcionamiento, el método debe recibir un único atributo, un valor númerico que indica los gramos de proteínas que contendrá la supuesta porción.
 
-## Development
+```html
+    <pre>2.6.3 :002 &gt; @basic_food.portion_impact(100)
+ =&gt; [0.32308e2, 0.43846e2] 
+2.6.3 :003 &gt; </pre>
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## Desarrollo
 
-## Contributing
+Las depedencias pueden ser instaladas mediante la ejecución de `bin/setup`. Las pruebas pueden ser ejecutadas mediante el `rake spec`. De igual manera puede hacerse uso de `bin/console` para una trabajar experimentalmente de forma dinámica.
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/food.
+Para instalar la gema en tu máquina local, ejecuta `bundle exec rake install`. Para lanzar una nueva versión, actualiza el número en `version.rb`, y ejecuta posteriormente `bundle exec rake release`, hecho que permitirá subir el archivo `.gem` a [rubygems.org](https://rubygems.org).
+
