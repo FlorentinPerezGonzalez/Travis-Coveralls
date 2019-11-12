@@ -107,5 +107,8 @@ RSpec.describe Food do
     it "Existe un método para calcular proporciones basadas en las proteínas que recibe un argumento" do
       expect(@huevos).to respond_to(:portion_impact).with(1).arguments
     end
+    it "El método que calcula proporciones basadas en las proteínas funciona correctamente" do
+      expect(@huevos.portion_impact(26)).to eq([8.4, 11.4])
+    end
   end
 end #describe
