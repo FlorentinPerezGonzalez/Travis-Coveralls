@@ -19,7 +19,13 @@ module Food
     end
 
     def to_a
-      
+      aux_node = @head
+      a = []
+      while aux_node != nil do
+        a << aux_node.value
+        aux_node = aux_node[:next]
+      end
+      a
     end
 
     def pushVarious(values)
