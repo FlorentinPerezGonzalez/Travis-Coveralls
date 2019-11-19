@@ -272,4 +272,13 @@ RSpec.describe Food::List do
       expect(@list.find_from_tail(8)).to eq(nil)
     end
   end
+  context "Operaciones adicionales con listas" do
+    before :each do
+      @list = Food::List.new
+      @list.pushVarious([2,0,4,3])
+    end
+    it "Existe un método each" do
+      expect(@list).to respond_to(:each)
+    end
+  end
 end
