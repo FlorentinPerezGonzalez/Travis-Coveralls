@@ -280,5 +280,12 @@ RSpec.describe Food::List do
     it "Existe un método each" do
       expect(@list).to respond_to(:each)
     end
+    it "Métodos propios de Enumerable funcionan correctamente" do
+      expect(@list.min).to eq(0)
+      expect(@list.max).to eq(4)
+      expect(@list.count).to eq(4)
+      expect(@list.map{|x| x*2}).to eq([4,0,8,6])
+      expect(@list.find{|x| x == 4}).to eq(4)
+    end
   end
 end
