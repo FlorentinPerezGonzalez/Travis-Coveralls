@@ -211,5 +211,9 @@ RSpec.describe Food::List do
     it "La salida formateada de una lista es la correcta" do
       expect(@list.to_a).to eq([])
     end
+    it "Se inserta con push adecuadamente" do
+      @list.push(3)
+      expect(@list.to_a).to eq([3])
+    end
   end
 end
