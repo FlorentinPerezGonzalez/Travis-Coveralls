@@ -30,5 +30,9 @@ module Food
       
     end
 
+    def pop
+      
+    end
+
   end
 end
