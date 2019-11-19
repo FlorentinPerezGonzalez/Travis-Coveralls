@@ -13,5 +13,10 @@ module Food
     def push(value)
       
     end
+
+    def unshift(value)
+      
+    end
+
   end
 end
