@@ -215,5 +215,9 @@ RSpec.describe Food::List do
       @list.push(3)
       expect(@list.to_a).to eq([3])
     end
+    it "Se inserta con unshift adecuadamente" do
+      @list.unshift(3)
+      expect(@list.to_a).to eq([3,1])
+    end
   end
 end
