@@ -57,7 +57,17 @@ module Food
     end
 
     def pop
-      
+      if @tail != nil then
+        if @tail[:prev] != nil then
+          @tail = @tail[:prev]
+          @tail[:next] = nil
+        else
+          @tail = nil
+          @head[:next] = nil
+          @head = nil
+        end
+        @size = @size - 1
+      end
     end
 
     def shift
