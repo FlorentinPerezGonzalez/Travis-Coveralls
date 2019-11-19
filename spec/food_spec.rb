@@ -237,5 +237,9 @@ RSpec.describe Food::List do
       @list.pop
       expect(@list.to_a).to eq([1,2,3])
     end
+    it "Se elimina con shift adecuadamente" do
+      @list.shift
+      expect(@list.to_a).to eq([2,3,4])
+    end
   end
 end
