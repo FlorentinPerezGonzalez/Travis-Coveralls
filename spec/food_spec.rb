@@ -245,5 +245,9 @@ RSpec.describe Food::List do
       @list.erase_from_head(2)
       expect(@list.to_a).to eq([1,3,4])
     end
+    it "Se elimina con erase_from_tail adecuadamente" do
+      @list.erase_from_tail(3)
+      expect(@list.to_a).to eq([1,2,4])
+    end
   end
 end
