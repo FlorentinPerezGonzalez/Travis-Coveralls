@@ -18,5 +18,8 @@ module Food
       
     end
 
+    def to_a
+      
+    end
   end
 end
