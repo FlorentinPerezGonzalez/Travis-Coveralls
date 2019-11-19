@@ -151,5 +151,10 @@ module Food
       end
       value_position
     end
+
+    def each
+      
+    end
+
   end
 end
