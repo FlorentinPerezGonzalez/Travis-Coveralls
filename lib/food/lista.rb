@@ -94,7 +94,17 @@ module Food
     end
 
     def erase_from_head(value)
-
+      aux_node = @head
+      while((aux_node != nil)) do
+        if aux_node[:value] == value then
+          aux_node[:next].prev = aux_node[:prev]
+          aux_node[:prev].next = aux_node[:next]
+          aux_node = nil
+          @size = @size - 1
+          break
+        end
+        aux_node = aux_node[:next]
+      end
     end
 
     def find_from_head(value)
