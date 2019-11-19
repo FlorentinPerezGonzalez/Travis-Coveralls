@@ -140,7 +140,7 @@ RSpec.describe Food::List do
       expect(nodo).not_to be(nil)
     end
     it "La clase lista posee una referencia a head" do
-      expect(Food::List).to respond_to(:head)
+      expect(Food::List.new).to respond_to(:head)
     end
   end
 end
