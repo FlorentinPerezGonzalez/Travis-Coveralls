@@ -344,5 +344,22 @@ RSpec.describe Food::List do
       @locura_carne.each{|x| solution = solution + x.gases}
       expect(solution.round(2)).to eq(90.3)
     end
+    it "Emisiones anuales de gases de efecto invernadero para cada dieta" do
+      solution = 0.0
+      @dieta_espanola.each{|x| solution = solution + x.gases*365}
+      expect(solution.round(2)).to eq(12497.6)
+      solution = 0.0
+      @dieta_vasca.each{|x| solution = solution + x.gases*365}
+      expect(solution.round(2)).to eq(2993.0)
+      solution = 0.0
+      @dieta_vegetaliana.each{|x| solution = solution + x.gases*365}
+      expect(solution.round(2)).to eq(4161.0)
+      solution = 0.0
+      @dieta_vegetariana.each{|x| solution = solution + x.gases*365}
+      expect(solution.round(2)).to eq(5803.5)
+      solution = 0.0
+      @locura_carne.each{|x| solution = solution + x.gases*365}
+      expect(solution.round(2)).to eq(32959.5)
+    end
   end
 end
