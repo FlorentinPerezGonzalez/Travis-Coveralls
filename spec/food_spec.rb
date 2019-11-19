@@ -197,5 +197,8 @@ RSpec.describe Food::List do
     it "Existe un método que permite borrar un nodo específico partiendo de head" do
       expect(@list).to respond_to(:erase_from_head)
     end
+    it "Existe un método que permite buscar un nodo específico partiendo de head" do
+      expect(@list).to respond_to(:find_from_head)
+    end
   end
 end
