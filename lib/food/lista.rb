@@ -54,5 +54,9 @@ module Food
     def find_from_head(value)
 
     end
+
+    def find_from_tail(value)
+
+    end
   end
 end
