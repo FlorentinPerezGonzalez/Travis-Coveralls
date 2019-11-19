@@ -121,7 +121,19 @@ module Food
     end
 
     def find_from_head(value)
-
+      aux_node = @head
+      value_position = nil
+      i = 0
+      while aux_node != nil do
+        if aux_node[:value] == value then
+          value_position = i
+          break
+        else
+          i = i +1
+          aux_node = aux_node[:next]
+        end
+      end
+      value_position
     end
 
     def find_from_tail(value)
