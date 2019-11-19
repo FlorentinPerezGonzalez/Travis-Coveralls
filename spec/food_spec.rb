@@ -204,4 +204,12 @@ RSpec.describe Food::List do
       expect(@list).to respond_to(:find_from_tail)
     end
   end
+  context "Operaciones de insercción en las listas" do
+    before :each do
+      @list = Food::List.new
+    end
+    it "La salida formateada de una lista es la correcta" do
+      expect(@list.to_a).to eq([])
+    end
+  end
 end
