@@ -179,5 +179,8 @@ RSpec.describe Food::List do
     it "Existe un método que permite insertar múltiples valores desde head" do
       expect(@list).to respond_to(:pushVarious)
     end
+    it "Existe un método que permite insertar múltiples valores desde tail" do
+      expect(@list).to respond_to(:unshiftVarious)
+    end
   end
 end
