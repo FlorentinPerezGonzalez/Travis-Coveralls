@@ -200,5 +200,8 @@ RSpec.describe Food::List do
     it "Existe un método que permite buscar un nodo específico partiendo de head" do
       expect(@list).to respond_to(:find_from_head)
     end
+    it "Existe un método que permite buscar un nodo específico partiendo de tail" do
+      expect(@list).to respond_to(:find_from_tail)
+    end
   end
 end
