@@ -182,5 +182,8 @@ RSpec.describe Food::List do
     it "Existe un método que permite insertar múltiples valores desde tail" do
       expect(@list).to respond_to(:unshiftVarious)
     end
+    it "Existe un método para extraer de la lista desde tail" do
+      expect(@list).to respond_to(:pop)
+    end
   end
 end
