@@ -265,5 +265,8 @@ RSpec.describe Food::List do
     it "Se encuentran elementos adecuadamente con find_from_tail" do
       expect(@list.find_from_tail(3)).to eq(-1)
     end
+    it "No se encuentra un elemento inexistente con find_from_head" do
+      expect(@list.find_from_head(8)).to eq(nil)
+    end
   end
 end
