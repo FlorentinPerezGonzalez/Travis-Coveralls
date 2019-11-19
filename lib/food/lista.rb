@@ -11,7 +11,16 @@ module Food
     end
 
     def push(value)
-      
+      if @head == nil then
+        @head = Node.new(value, nil, @tail)
+        @tail = @head
+        @size = 1
+      else
+        aux_node = Node.new(value, nil, @tail)
+        @tail[:next] = aux_node
+        @tail = aux_node
+        @size = @size + 1
+      end
     end
 
     def unshift(value)
