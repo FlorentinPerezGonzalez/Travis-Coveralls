@@ -176,5 +176,8 @@ RSpec.describe Food::List do
     it "Existe un método que devuleve la lista como un array" do
       expect(@list).to respond_to(:to_a)
     end
+    it "Existe un método que permite insertar múltiples valores desde head" do
+      expect(@list).to respond_to(:pushVarious)
+    end
   end
 end
