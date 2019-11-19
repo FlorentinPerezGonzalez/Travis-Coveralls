@@ -47,7 +47,8 @@ module Food
     end
 
     def pushVarious(values)
-      
+      raise TypeError "El argumento debe ser un array con los elementos a insertar" unless values.is_a?Array
+      values.each{|x| push(x)}
     end
 
     def unshiftVarious(values)
