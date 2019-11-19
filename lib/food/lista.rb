@@ -38,5 +38,9 @@ module Food
       
     end
 
+    def clear
+      
+    end
+    
   end
 end
