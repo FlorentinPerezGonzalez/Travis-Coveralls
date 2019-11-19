@@ -163,7 +163,35 @@ module Food
     end
 
     def [](index)
-
+      case index
+      when :head, "head"
+        return @head[:value]
+      when :tail, "tail"
+        return @tail[:value]
+      else
+        if (index.instance_of?Integer) then
+          if (index >= 0) && (index <= @size) then
+            aux_node = @head
+            i = 0
+            while i != index do
+              aux_node = aux_node[:next]
+              i = i + 1
+            end
+            return aux_node[:value]
+          elsif (index < 0) && (index.abs <= @size) then
+            aux_node = @tail
+            i = 1
+            aux_index = index.abs
+            while i != aux_index do
+              aux_node = aux_node[:prev]
+              i = i + 1
+            end
+            return aux_node[:value]
+          end
+        else
+          return nil
+        end
+      end
     end
 
   end
