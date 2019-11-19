@@ -287,5 +287,8 @@ RSpec.describe Food::List do
       expect(@list.map{|x| x*2}).to eq([4,0,8,6])
       expect(@list.find{|x| x == 4}).to eq(4)
     end
+    it "Existe un método []" do
+      expect(@list).to respond_to(:[])
+    end
   end
 end
