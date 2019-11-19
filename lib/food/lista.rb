@@ -42,5 +42,10 @@ module Food
       
     end
     
+
+    def erase_from_tail(value)
+      
+    end
+
   end
 end
