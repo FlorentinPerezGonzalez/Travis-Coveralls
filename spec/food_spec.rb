@@ -223,5 +223,9 @@ RSpec.describe Food::List do
       @list.pushVarious([2,3])
       expect(@list.to_a).to eq([2,3])
     end
+    it "Se inserta con unshiftVarious adecuadamente" do
+      @list.unshiftVarious([2,3])
+      expect(@list.to_a).to eq([3,2])
+    end
   end
 end
