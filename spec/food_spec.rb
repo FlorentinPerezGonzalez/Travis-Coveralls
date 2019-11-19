@@ -129,6 +129,6 @@ RSpec.describe Food do
   end
 end #describe
 
-RSpec.describe List do
+RSpec.describe Food::List do
 
 end
