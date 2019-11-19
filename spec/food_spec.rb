@@ -128,3 +128,7 @@ RSpec.describe Food do
     end
   end
 end #describe
+
+RSpec.describe List do
+
+end
