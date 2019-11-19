@@ -24,7 +24,16 @@ module Food
     end
 
     def unshift(value)
-      
+      if @head == nil then
+        @head = Node.new(value, nil, @tail)
+        @tail = @head
+        @size = 1
+      else
+        aux_node = Node.new(value, @head, nil)
+        @head[:prev] = aux_node
+        @head = aux_node
+        @size = @size + 1
+      end
     end
 
     def to_a
