@@ -34,5 +34,9 @@ module Food
       
     end
 
+    def shift
+      
+    end
+
   end
 end
