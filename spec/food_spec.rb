@@ -228,4 +228,14 @@ RSpec.describe Food::List do
       expect(@list.to_a).to eq([3,2])
     end
   end
+  context "Operaciones de eliminación en las listas" do
+    before :each do
+      @list = Food::List.new
+      @list.pushVarious([1,2,3,4])
+    end
+    it "Se elimina con pop adecuadamente" do
+      @list.pop
+      expect(@list.to_a).to eq([1,2,3])
+    end
+  end
 end
