@@ -50,5 +50,9 @@ module Food
     def erase_from_head(value)
 
     end
+
+    def find_from_head(value)
+
+    end
   end
 end
