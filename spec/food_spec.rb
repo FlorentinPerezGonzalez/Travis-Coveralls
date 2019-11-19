@@ -361,5 +361,22 @@ RSpec.describe Food::List do
       @locura_carne.each{|x| solution = solution + x.gases*365}
       expect(solution.round(2)).to eq(32959.5)
     end
+    it "Estimaciones de uso de terreno para cada dieta" do
+      solution = 0.0
+      @dieta_espanola.each{|x| solution = solution + x.land_use}
+      expect(solution.round(2)).to eq(240.92)
+      solution = 0.0
+      @dieta_vasca.each{|x| solution = solution + x.land_use}
+      expect(solution.round(2)).to eq(19.1)
+      solution = 0.0
+      @dieta_vegetaliana.each{|x| solution = solution + x.land_use}
+      expect(solution.round(2)).to eq(23.8)
+      solution = 0.0
+      @dieta_vegetariana.each{|x| solution = solution + x.land_use}
+      expect(solution.round(2)).to eq(48.3)
+      solution = 0.0
+      @locura_carne.each{|x| solution = solution + x.land_use}
+      expect(solution.round(2)).to eq(409.4)
+    end
   end
 end
