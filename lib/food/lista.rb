@@ -162,5 +162,9 @@ module Food
       end
     end
 
+    def [](index)
+
+    end
+
   end
 end
