@@ -130,5 +130,10 @@ RSpec.describe Food do
 end #describe
 
 RSpec.describe Food::List do
-
+  context "Instancias de la clase lista y acceso a sus atributos. Existencia de nodos" do
+    it "Instanciación con new" do
+      lista = Food::List.new
+      expect(lista).not_to be(nil)
+    end
+  end
 end

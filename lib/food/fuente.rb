@@ -1,4 +1,4 @@
-module Food 
+module Food
     class Food
         attr_reader :name, :gases, :land_use, :protein, :lipids, :carbohydrates
 
