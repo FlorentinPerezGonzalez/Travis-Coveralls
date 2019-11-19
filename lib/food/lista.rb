@@ -85,7 +85,10 @@ module Food
     end
 
     def clear
-      
+      while @tail != nil do
+        pop
+      end
+      @size = 0
     end
     
 
