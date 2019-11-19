@@ -145,6 +145,9 @@ RSpec.describe Food::List do
     it "Los nodos poseen una referencia al nodo anterior en la lista" do
       expect(Food::List::Node.new(nil,nil,nil)).to respond_to(:prev)
     end
+    it "Los nodos poseen un valor" do
+      expect(Food::List::Node.new(nil,nil,nil)).to respond_to(:value)
+    end
     it "La clase lista posee una referencia a head" do
       expect(Food::List.new).to respond_to(:head)
     end
