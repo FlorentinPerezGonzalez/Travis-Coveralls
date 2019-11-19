@@ -302,4 +302,47 @@ RSpec.describe Food::List do
       expect(@list[-2]).to eq(4)
     end
   end
+  context "Cálculos sobre distintas dietas" do
+    before :each do
+      @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
+      @cordero = Food::Food.new({:name => 'Cordero', :protein => 18.0, :carbohydrates => 0.0, :lipids => 17.0, :gas => 20.0, :land_use => 185.0})
+      @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
+      @cerveza = Food::Food.new({:name => 'Cerveza', :protein => 0.5, :carbohydrates => 3.6, :lipids => 0.0, :gas => 0.24, :land_use => 0.22})
+      @chocolate = Food::Food.new({:name => 'Chocolate', :protein => 5.3, :carbohydrates => 47.0, :lipids => 30.0, :gas => 2.3, :land_use => 3.4})
+      @vaca = Food::Food.new({:name => 'Vaca', :protein => 21.1, :carbohydrates => 0.0, :lipids => 3.1, :gas => 50.0, :land_use => 164.0})
+      @nuez = Food::Food.new({:name => 'Nuez', :protein => 20.0, :carbohydrates => 21.1, :lipids => 54.0, :gas => 0.3, :land_use => 7.9})
+      @queso = Food::Food.new({:name => 'Queso', :protein => 25.0, :carbohydrates => 1.3, :lipids => 33.0, :gas => 11.0, :land_use => 41.0})
+      @leche = Food::Food.new({:name => 'Leche', :protein => 3.3, :carbohydrates => 4.8, :lipids => 3.2, :gas => 3.2, :land_use => 8.9})
+      @tofu = Food::Food.new({:name => 'Tofu', :protein => 8.0, :carbohydrates => 1.9, :lipids => 4.8, :gas => 2.0, :land_use => 2.2})
+      @cafe = Food::Food.new({:name => 'Cafe', :protein => 0.1, :carbohydrates => 0.0, :lipids => 0.0, :gas => 0.4, :land_use => 0.3})
+      @pollo = Food::Food.new({:name => 'Pollo', :protein => 20.6, :carbohydrates => 0.0, :lipids => 5.6, :gas => 5.7, :land_use => 7.1})
+      @dieta_espanola = Food::List.new
+      @dieta_espanola.pushVarious([@cordero, @lentejas, @chocolate, @queso, @cerveza, @nuez])
+      @dieta_vasca = Food::List.new
+      @dieta_vasca.pushVarious([@lentejas, @chocolate, @chocolate, @leche])
+      @dieta_vegetariana = Food::List.new
+      @dieta_vegetariana.pushVarious([@nuez, @nuez, @leche, @leche, @huevos, @chocolate, @lentejas, @tofu])
+      @dieta_vegetaliana = Food::List.new
+      @dieta_vegetaliana.pushVarious([@tofu, @tofu, @tofu, @tofu, @lentejas, @nuez, @chocolate, @cafe])
+      @locura_carne = Food::List.new
+      @locura_carne.pushVarious([@vaca, @cordero, @pollo, @lentejas, @queso, @leche])
+    end
+    it "Cálculo de las emisiones diarias de gases de efecto invernadero para cada dieta" do
+      solution = 0.0
+      @dieta_espanola.each{|x| solution = solution + x.gases}
+      expect(solution.round(2)).to eq(34.24)
+      solution = 0.0
+      @dieta_vasca.each{|x| solution = solution + x.gases}
+      expect(solution.round(2)).to eq(8.2)
+      solution = 0.0
+      @dieta_vegetaliana.each{|x| solution = solution + x.gases}
+      expect(solution.round(2)).to eq(11.4)
+      solution = 0.0
+      @dieta_vegetariana.each{|x| solution = solution + x.gases}
+      expect(solution.round(2)).to eq(15.9)
+      solution = 0.0
+      @locura_carne.each{|x| solution = solution + x.gases}
+      expect(solution.round(2)).to eq(90.3)
+    end
+  end
 end
