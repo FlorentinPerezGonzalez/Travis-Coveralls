@@ -170,5 +170,8 @@ RSpec.describe Food::List do
     it "Existe un método para añadir un nodo por la cola" do
       expect(@list).to respond_to(:push)
     end
+    it "Existe un método para añadir un nodo por la cabeza" do
+      expect(@list).to respond_to(:unshift)
+    end
   end
 end
