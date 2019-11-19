@@ -254,4 +254,13 @@ RSpec.describe Food::List do
       expect(@list.to_a).to eq([])
     end
   end
+  context "Operaciones de búsqueda en las listas" do
+    before :each do
+      @list = Food::List.new 
+      @list.pushVarious([2,0,4,3])
+    end
+    it "Se encuentran elementos adecuadamente con find_from_head" do
+      expect(@list.find_from_head(3)).to eq(3)
+    end
+  end
 end
