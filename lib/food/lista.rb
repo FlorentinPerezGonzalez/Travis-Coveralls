@@ -1,5 +1,7 @@
 module Food
   class List
+    include Enumerable
+
     Node = Struct.new(:value, :next, :prev)
     attr_reader :head, :tail
 
@@ -153,7 +155,11 @@ module Food
     end
 
     def each
-      
+      aux_node = @head
+      while aux_node != nil do
+        yield aux_node[:value]
+        aux_node = aux_node[:next]
+      end
     end
 
   end
