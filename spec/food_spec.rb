@@ -188,5 +188,8 @@ RSpec.describe Food::List do
     it "Existe un método para extraer de la lista desde head" do
       expect(@list).to respond_to(:shift)
     end
+    it "Existe un método para borrar toda la lista" do
+      expect(@list).to respond_to(:clear)
+    end
   end
 end
