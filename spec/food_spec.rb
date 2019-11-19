@@ -155,4 +155,10 @@ RSpec.describe Food::List do
       expect(Food::List.new).to respond_to(:tail)
     end
   end
+  context "Métodos propios de los nodos" do
+    it "La salida foramateada de los nodos es la correcta" do
+      nodo = Food::List::Node.new(1,nil,nil)
+      expect(nodo.to_s).to eq("(1)")
+    end
+  end
 end
