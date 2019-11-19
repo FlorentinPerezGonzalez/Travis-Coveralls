@@ -71,7 +71,17 @@ module Food
     end
 
     def shift
-      
+      if @head != nil then
+        if @head[:next] != nil then
+          @head = @head[:next]
+          @head[:prev] = nil
+        else
+          @head = nil
+          @tail[:prev] = nil
+          @tail = nil
+        end
+        @size = @size -1
+      end
     end
 
     def clear
