@@ -135,5 +135,9 @@ RSpec.describe Food::List do
       lista = Food::List.new
       expect(lista).not_to be(nil)
     end
+    it "Existen nodos" do
+      nodo = Food::List::Node.new(nil,nil,nil)
+      expect(nodo).not_to be(nil)
+    end
   end
 end
