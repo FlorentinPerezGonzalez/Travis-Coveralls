@@ -185,5 +185,8 @@ RSpec.describe Food::List do
     it "Existe un método para extraer de la lista desde tail" do
       expect(@list).to respond_to(:pop)
     end
+    it "Existe un método para extraer de la lista desde head" do
+      expect(@list).to respond_to(:shift)
+    end
   end
 end
