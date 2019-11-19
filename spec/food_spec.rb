@@ -290,5 +290,16 @@ RSpec.describe Food::List do
     it "Existe un método []" do
       expect(@list).to respond_to(:[])
     end
+    it "El método [] funciona correctamente" do
+      expect(@list[:head]).to eq(2)
+      expect(@list[:tail]).to eq(3)
+      expect(@list["head"]).to eq(2)
+      expect(@list["tail"]).to eq(3)
+      expect(@list[:word]).to eq(nil)
+      expect(@list["word"]).to eq(nil)
+      expect(@list[99]).to eq(nil)
+      expect(@list[2]).to eq(4)
+      expect(@list[-2]).to eq(4)
+    end
   end
 end
