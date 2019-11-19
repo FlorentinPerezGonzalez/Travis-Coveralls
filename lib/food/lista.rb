@@ -21,5 +21,10 @@ module Food
     def to_a
       
     end
+
+    def pushVarious(values)
+      
+    end
+
   end
 end
