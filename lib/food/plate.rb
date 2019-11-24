@@ -10,6 +10,7 @@ module Food
             ingredients_grams.each {|x| raise TypeError "El tercer argumento debe ser una lista solo de valores numéricos" unless x.is_a?(Numeric)}
             
             @name = name
+            @ingredients = ingredients
         end
     end
 end
