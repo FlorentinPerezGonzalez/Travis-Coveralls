@@ -414,5 +414,8 @@ RSpec.describe Food::List do
     it "El método min funciona correctamente" do
       expect(@lista.min).to eq(@huevos)
     end
+    it "El método sort funciona correctamente" do
+      expect(@lista.sort).to eq([@huevos, @cordero, @lentejas])
+    end
   end
 end
