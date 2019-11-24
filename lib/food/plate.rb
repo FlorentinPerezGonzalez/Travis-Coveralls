@@ -59,5 +59,9 @@ module Food
             solution[solution.length-1]=")"
             solution
         end
+
+        def calculate_TCV
+            
+        end
     end
 end
