@@ -50,5 +50,14 @@ module Food
             end
             (lipids_grams.round(2) / (grams.round(2))).truncate(3) * 100
         end
+
+        def to_s
+            solution = "(#{@name}:"
+            @ingredients.each_with_index do |x, index|
+                solution = solution + " #{ingredients_grams[index]} gramos de #{x.name},"
+            end
+            solution[solution.length-1]=")"
+            solution
+        end
     end
 end
