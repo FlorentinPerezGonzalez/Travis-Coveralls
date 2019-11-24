@@ -25,6 +25,11 @@ module Food
             [BigDecimal("#{portion_impact_co2(protein_grams)}"), BigDecimal("#{portion_impact_land(protein_grams)}")]
         end
 
+        def <=>(other)
+            return nil unless other.instance_of? Food
+            [self.energetic_value, self.gases, self.land_use] <=> [other.energetic_value, other.gases, other.land_use]
+        end
+
         private
 
         def portion_impact_co2(protein_grams)
