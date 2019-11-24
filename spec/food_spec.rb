@@ -423,3 +423,7 @@ RSpec.describe Food::List do
     end
   end
 end
+
+RSpec.describe Food::Plate do
+
+end
