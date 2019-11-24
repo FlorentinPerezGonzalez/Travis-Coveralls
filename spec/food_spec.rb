@@ -486,5 +486,8 @@ RSpec.describe Food::Plate do
     it "Se obtiene el alimento formateado" do
       expect(@plate.to_s).to eq("(Lentejas Deluxe: 10 gramos de Huevos, 20 gramos de Cordero, 30 gramos de Lentejas)")
     end
+    it "Existe un método para calcular V.C.T del plato" do
+      expect(@plate).to respond_to(:calculate_TCV)
+    end
   end
 end
