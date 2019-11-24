@@ -411,5 +411,8 @@ RSpec.describe Food::List do
     it "El método max funciona correctamente" do
       expect(@lista.max).to eq(@lentejas)
     end
+    it "El método min funciona correctamente" do
+      expect(@lista.min).to eq(@huevos)
+    end
   end
 end
