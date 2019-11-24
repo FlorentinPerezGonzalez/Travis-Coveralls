@@ -127,6 +127,16 @@ RSpec.describe Food do
       expect(solution).to eq([7.695,12.234])
     end
   end
+  context "Food es comparable" do
+    before :each do
+      @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
+      @nuez = Food::Food.new({:name => 'Nuez', :protein => 20.0, :carbohydrates => 21.1, :lipids => 54.0, :gas => 0.3, :land_use => 7.9})
+      @pollo = Food::Food.new({:name => 'Pollo', :protein => 20.6, :carbohydrates => 0.0, :lipids => 5.6, :gas => 5.7, :land_use => 7.1})
+    end
+    it "Food tiene el módulo Comparable" do
+      expect(Food::Food.ancestors.select {|x| x.class == Module}).to eq([Comparable, Kernel])
+    end
+  end
 end #describe
 
 RSpec.describe Food::List do
