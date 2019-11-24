@@ -441,5 +441,8 @@ RSpec.describe Food::Plate do
       it "Plate tiene definido un conjunto de alimentos" do
         expect(Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams)).to respond_to(:ingredients)
       end
+      it "Plate tienen definido un conjunto de cantidades de alimentos" do
+        expect(Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams)).to respond_to(:ingredients_grams)
+      end
   end
 end
