@@ -454,4 +454,19 @@ RSpec.describe Food::Plate do
       expect(Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams).ingredients_grams.to_a).to eq([10, 20, 30])
     end
   end
+  describe "Prueba de método de Plate" do
+    before :each do
+      @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
+      @cordero = Food::Food.new({:name => 'Cordero', :protein => 18.0, :carbohydrates => 0.0, :lipids => 17.0, :gas => 20.0, :land_use => 185.0})
+      @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
+      @lista = Food::List.new
+      @lista.pushVarious([@huevos, @cordero, @lentejas])
+      @lista_grams = Food::List.new
+      @lista_grams.pushVarious([10, 20, 30])
+      @plate = Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams)
+    end
+    it "Existe un método que calcula el % de proteínas" do
+      expect(@plate).to respond_to(:protein_percentage)
+    end
+  end
 end
