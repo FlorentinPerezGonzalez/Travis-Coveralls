@@ -397,4 +397,14 @@ RSpec.describe Food::List do
       expect(solution.round(2)).to eq(409.4)
     end
   end
+  context "Comparaciones adecuadas en una lista de alimentos" do
+    before :each do
+      @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
+      @cordero = Food::Food.new({:name => 'Cordero', :protein => 18.0, :carbohydrates => 0.0, :lipids => 17.0, :gas => 20.0, :land_use => 185.0})
+      @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
+    end
+    it "El método colect funciona correctamente" do
+      expect((1..4).collect { @huevos }).to eq([@huevos, @huevos, @huevos, @huevos])
+    end
+  end
 end
