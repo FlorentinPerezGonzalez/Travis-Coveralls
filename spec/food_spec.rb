@@ -474,5 +474,8 @@ RSpec.describe Food::Plate do
     it "Existe un método que calcula el % de lípidos" do
       expect(@plate).to respond_to(:lipids_percentage)
     end
+    it "Se obtiene el procentaje de proteínas correcto" do
+      expect(@plate.protein_percentage).to eq(2)
+    end
   end
 end
