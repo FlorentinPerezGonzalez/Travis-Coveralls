@@ -402,6 +402,7 @@ RSpec.describe Food::List do
       @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
       @cordero = Food::Food.new({:name => 'Cordero', :protein => 18.0, :carbohydrates => 0.0, :lipids => 17.0, :gas => 20.0, :land_use => 185.0})
       @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
+      @chocolate = Food::Food.new({:name => 'Chocolate', :protein => 5.3, :carbohydrates => 47.0, :lipids => 30.0, :gas => 2.3, :land_use => 3.4})
       @lista = Food::List.new
       @lista.pushVarious([@huevos, @cordero, @lentejas])
     end
@@ -416,6 +417,9 @@ RSpec.describe Food::List do
     end
     it "El método sort funciona correctamente" do
       expect(@lista.sort).to eq([@huevos, @cordero, @lentejas])
+    end
+    it "El método select funciona correctamente" do
+      expect(@lista.select { |x| x > @cordero}).to eq([@lentejas])
     end
   end
 end
