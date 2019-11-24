@@ -480,5 +480,8 @@ RSpec.describe Food::Plate do
     it "Se obtiene el procentaje de lípidos correcto" do
       expect(@plate.lipids_percentage).to eq(0.8)
     end
+    it "Se obtiene el procentaje de carbohidratos correcto" do
+      expect(@plate.carbohydrates_percentage).to eq(2.6)
+    end
   end
 end
