@@ -13,5 +13,9 @@ module Food
             @ingredients = ingredients
             @ingredients_grams = ingredients_grams
         end
+
+        def protein_percentage
+
+        end
     end
 end
