@@ -483,5 +483,8 @@ RSpec.describe Food::Plate do
     it "Se obtiene el procentaje de carbohidratos correcto" do
       expect(@plate.carbohydrates_percentage).to eq(2.6)
     end
+    it "Se obtiene el alimento formateado" do
+      expect(@plate.to_s).to eq("(Lentejas Deluxe: 10 gramos de Huevos, 20 gramos de Cordero, 30 gramos de Lentejas)")
+    end
   end
 end
