@@ -27,7 +27,16 @@ module Food
         end
 
         def carbohydrates_percentage
-
+            grams = 0.0
+            carbohydrates_grams = 0.0
+            @ingredients.each_with_index do |x, index|
+                carbohydrates_grams = carbohydrates_grams + ((@ingredients_grams[index] * 100).round) * ((x.carbohydrates*100).round) / 10000000.0
+            end
+            for x in @ingredients_grams do
+                grams = grams + x
+            end
+            puts carbohydrates_grams
+            (carbohydrates_grams.round(2) / (grams.round(2))).truncate(3) * 100
         end
 
         def lipids_percentage
