@@ -11,6 +11,7 @@ module Food
             
             @name = name
             @ingredients = ingredients
+            @ingredients_grams = ingredients_grams
         end
     end
 end
