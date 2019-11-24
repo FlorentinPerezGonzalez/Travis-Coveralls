@@ -425,5 +425,9 @@ RSpec.describe Food::List do
 end
 
 RSpec.describe Food::Plate do
-
+  describe "Pruebas iniciales sobre Plate" do
+    it "Plate tiene un cosntructor con 3 argumentos" do
+      expect(Food::Plate).to respond_to(:new).with(3).arguments
+    end
+  end
 end
