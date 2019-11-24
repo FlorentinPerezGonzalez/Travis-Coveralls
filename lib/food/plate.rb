@@ -21,5 +21,9 @@ module Food
         def carbohydrates_percentage
 
         end
+
+        def lipids_percentage
+
+        end
     end
 end
