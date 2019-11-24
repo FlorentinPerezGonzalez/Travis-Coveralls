@@ -450,5 +450,8 @@ RSpec.describe Food::Plate do
     it "Se obtienen correctamente los ingredientes de un plato" do
       expect(Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams).ingredients.to_a).to eq([@huevos, @cordero, @lentejas])
     end
+    it "Se obtienen correctamente los gramos de ingredientes de un plato" do
+      expect(Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams).ingredients_grams.to_a).to eq([10, 20, 30])
+    end
   end
 end
