@@ -136,6 +136,14 @@ RSpec.describe Food do
     it "Food tiene el módulo Comparable" do
       expect(Food::Food.ancestors.select {|x| x.class == Module}).to eq([Comparable, Kernel])
     end
+    it "Se compara un alimento adecuadamente con otro" do
+      expect(@huevos < @nuez).to eq(true)
+      expect(@nuez > @pollo).to eq(true)
+      expect(@huevos >= @pollo).to eq(true)
+      expect(@huevos == @huevos).to eq(true)
+      expect(@huevos == @pollo).to eq(false)
+      expect(@pollo <= @nuez).to eq(true)
+    end
   end
 end #describe
 
