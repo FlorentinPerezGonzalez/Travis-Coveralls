@@ -17,5 +17,9 @@ module Food
         def protein_percentage
 
         end
+
+        def carbohydrates_percentage
+
+        end
     end
 end
