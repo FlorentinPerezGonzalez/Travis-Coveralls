@@ -15,7 +15,17 @@ module Food
         end
 
         def protein_percentage
-
+            grams = 0.0
+            protein_grams = 0.0
+            @ingredients.each_with_index do |x, index|
+                protein_grams = protein_grams + ((@ingredients_grams[index] * 100).round) * ((x.protein*100).round) / 10000000.0
+            end
+            for x in @ingredients_grams do
+                grams = grams + x
+            end
+            puts protein_grams.round(2)
+            puts grams
+            (protein_grams.round(2) / (grams.round)).round(2) * 100
         end
 
         def carbohydrates_percentage
