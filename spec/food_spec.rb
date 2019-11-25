@@ -454,7 +454,7 @@ RSpec.describe Food::Plate do
       expect(Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams).ingredients_grams.to_a).to eq([10, 20, 30])
     end
   end
-  describe "Prueba de método de Plate" do
+  context "Prueba de método de Plate" do
     before :each do
       @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
       @cordero = Food::Food.new({:name => 'Cordero', :protein => 18.0, :carbohydrates => 0.0, :lipids => 17.0, :gas => 20.0, :land_use => 185.0})
@@ -493,4 +493,8 @@ RSpec.describe Food::Plate do
       expect(@plate.calculate_TCV).to eq(15.492)
     end
   end
+end
+
+RSpec.describe Food::Impact_Plate do
+
 end
