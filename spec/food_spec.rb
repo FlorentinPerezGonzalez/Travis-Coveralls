@@ -573,5 +573,12 @@ RSpec.describe Food::Impact_Plate do
     it "Impact_Plate posee el módulo Comparable" do
       expect(Food::Impact_Plate.ancestors.select {|x| x.class == Module}).to eq([Comparable, Kernel])
     end
+    it "Se comparan dos objetos Impact_Plate adecuadamente" do
+      expect(@impact_plate_1 < @impact_plate_2).to eq(false)
+      expect(@impact_plate_1 <= @impact_plate_2).to eq(false)
+      expect(@impact_plate_1 > @impact_plate_2).to eq(true)
+      expect(@impact_plate_1 >= @impact_plate_2).to eq(true)
+      expect(@impact_plate_1 == @impact_plate_2).to eq(false)
+    end
   end
 end
