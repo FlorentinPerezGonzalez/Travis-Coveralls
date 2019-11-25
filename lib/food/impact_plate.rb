@@ -3,5 +3,9 @@ module Food
         def calculate_impact
 
         end
+
+        def land_use
+
+        end
     end
 end
