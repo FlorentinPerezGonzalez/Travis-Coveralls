@@ -764,19 +764,22 @@ RSpec.describe Food::Impact_Plate do
       @plate_b = Food::Plate.new("Tarta de chocolate", @listaI_b, @lista_b)
       @plate_c = Food::Plate.new("Tofu con chocolate", @listaI_c, @lista_c)
       @lista_plates = Food::List.new
-      @lista_plates.pushVarious([@plate, @plate_b, @plate_c])
+      @lista_plates.pushVarious([@plate_b, @plate, @plate_c])
     end
     it "Se comprueba el funcionamiento de collect" do
       expect(@lista_plates.collect{|x| x.protein_percentage > 20.0}).to eq([true, true, false])
     end
     it "Se comprueba el funcionamiento de select" do
-      expect(@lista_plates.select{|x| x.protein_percentage > 20.0}).to eq([@plate, @plate_b])
+      expect(@lista_plates.select{|x| x.protein_percentage > 20.0}).to eq([@plate_b, @plate])
     end
     it "Se comprueba el funcionamiento de max" do
       expect(@lista_plates.max).to eq(@plate_c)
     end
     it "Se comprueba el funcionamiento de min" do
       expect(@lista_plates.min).to eq(@plate)
+    end
+    it "Se comprueba el funcionamiento de sort" do
+      expect(@lista_plates.sort).to eq([@plate, @plate_b, @plate_c])
     end
   end
 end
