@@ -77,8 +77,8 @@ RSpec.describe Food do
     before :each do
       @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
       @carne_de_vaca = Food::Food.new({:name => 'Carne de vaca', :protein => 21.1, :carbohydrates => 0.0, :lipids => 3.1, :gas => 50.0, :land_use => 164.0})
-      @cerveza = Food::Food.new({:name => 'Cerveza', :protein => 0.5, :carbohydrates => 3.6, :lipids => 0.0, :gas => 0.24, :land_use => 0.22})
       @cafe = Food::Food.new({:name => 'Cafe', :protein => 0.1, :carbohydrates => 0.0, :lipids => 0.0, :gas => 0.4, :land_use => 0.3})
+      @cerveza = Food::Food.new({:name => 'Cerveza', :protein => 0.5, :carbohydrates => 3.6, :lipids => 0.0, :gas => 0.24, :land_use => 0.22})
     end
 
     it "El valor calórico de un alimento es el correcto" do
@@ -586,6 +586,31 @@ RSpec.describe Food::Impact_Plate do
       expect(@plate_1 > @impact_plate_2).to eq(true)
       expect(@plate_1 >= @impact_plate_2).to eq(true)
       expect(@plate_1 == @impact_plate_1).to eq(true)
+    end
+  end
+  context "Se realizan comparaciones entre platos de la dieta española" do
+    before :each do
+      @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
+      @nuez = Food::Food.new({:name => 'Nuez', :protein => 20.0, :carbohydrates => 21.1, :lipids => 54.0, :gas => 0.3, :land_use => 7.9})
+      @cordero = Food::Food.new({:name => 'Cordero', :protein => 18.0, :carbohydrates => 0.0, :lipids => 17.0, :gas => 20.0, :land_use => 185.0})
+      @cerveza = Food::Food.new({:name => 'Cerveza', :protein => 0.5, :carbohydrates => 3.6, :lipids => 0.0, :gas => 0.24, :land_use => 0.22})
+      @lista = Food::List.new
+      @lista.pushVarious([40, 60])
+      @lista_b = Food::List.new
+      @lista_b.pushVarious([280,20,20])
+      @listaI = Food::List.new
+      @listaI.pushVarious([@lentejas, @nuez])
+      @listaI_b = Food::List.new
+      @listaI_b.pushVarious([@cerveza, @cordero, @nuez])
+    end
+    it "Comparación de valoración nutricional" do
+      plato_a = Food::Plate.new("Lentejas con nueces", @listaI, @lista)
+      plato_b = Food::Plate.new("Cordero con nueces a la cerveza", @listaI_b, @lista_b)
+      expect(plato_a < plato_b).to eq(false)
+      expect(plato_a <= plato_b).to eq(false)
+      expect(plato_a > plato_b).to eq(true)
+      expect(plato_a > plato_b).to eq(true)
+      expect(plato_a == plato_b).to eq(false)
     end
   end
 end
