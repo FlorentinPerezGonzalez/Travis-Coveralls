@@ -425,18 +425,18 @@ RSpec.describe Food::List do
 end
 
 RSpec.describe Food::Plate do
+  before :each do
+    @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
+    @cordero = Food::Food.new({:name => 'Cordero', :protein => 18.0, :carbohydrates => 0.0, :lipids => 17.0, :gas => 20.0, :land_use => 185.0})
+    @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
+    @lista = Food::List.new
+    @lista.pushVarious([@huevos, @cordero, @lentejas])
+    @lista_grams = Food::List.new
+    @lista_grams.pushVarious([10, 20, 30])
+  end
   describe "Pruebas iniciales sobre Plate" do
     it "Plate tiene un constructor con 3 argumentos" do
       expect(Food::Plate).to respond_to(:new).with(3).arguments
-    end
-    before :each do
-      @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
-      @cordero = Food::Food.new({:name => 'Cordero', :protein => 18.0, :carbohydrates => 0.0, :lipids => 17.0, :gas => 20.0, :land_use => 185.0})
-      @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
-      @lista = Food::List.new
-      @lista.pushVarious([@huevos, @cordero, @lentejas])
-      @lista_grams = Food::List.new
-      @lista_grams.pushVarious([10, 20, 30])
     end
     it "Plate tiene definido un conjunto de alimentos" do
       expect(Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams)).to respond_to(:ingredients)
@@ -456,13 +456,6 @@ RSpec.describe Food::Plate do
   end
   context "Prueba de método de Plate" do
     before :each do
-      @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
-      @cordero = Food::Food.new({:name => 'Cordero', :protein => 18.0, :carbohydrates => 0.0, :lipids => 17.0, :gas => 20.0, :land_use => 185.0})
-      @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
-      @lista = Food::List.new
-      @lista.pushVarious([@huevos, @cordero, @lentejas])
-      @lista_grams = Food::List.new
-      @lista_grams.pushVarious([10, 20, 30])
       @plate = Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams)
     end
     it "Existe un método que calcula el % de proteínas" do
@@ -514,6 +507,9 @@ RSpec.describe Food::Impact_Plate do
     end
     it "Los objetos Impact_Plate son instancian de Food::Impact_Plate" do
       expect(Food::Impact_Plate.new("Lentejas Deluxe", @lista, @lista_grams)).to be_instance_of(Food::Impact_Plate)
+    end
+    it "Se comprueba la clase de Impact_Plate" do 
+      expect(Food::Impact_Plate.new("Lentejas Deluxe", @lista, @lista_grams).class).to eq(Food::Impact_Plate)
     end
   end
   context "Funcionamiento y estructura de la clase Impact_Plate" do
