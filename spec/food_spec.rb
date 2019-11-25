@@ -580,5 +580,12 @@ RSpec.describe Food::Impact_Plate do
       expect(@impact_plate_1 >= @impact_plate_2).to eq(true)
       expect(@impact_plate_1 == @impact_plate_2).to eq(false)
     end
+    it "Se comparan adecuadamente objetos Plate con objetos Impact_Plate" do
+      expect(@plate_1 < @impact_plate_2).to eq(false)
+      expect(@plate_1 <= @impact_plate_2).to eq(false)
+      expect(@plate_1 > @impact_plate_2).to eq(true)
+      expect(@plate_1 >= @impact_plate_2).to eq(true)
+      expect(@plate_1 == @impact_plate_1).to eq(true)
+    end
   end
 end
