@@ -750,4 +750,24 @@ RSpec.describe Food::Impact_Plate do
       expect(plato_a == plato_b).to eq(false)
     end
   end
+  context "Se comprueba el funcionamiento interno de una lista de Food::Plates usando funciones propias de Enumerable" do
+    before :each do
+      @lista_b = Food::List.new
+      @lista_b.pushVarious([85,15,5,15])
+      @lista_c = Food::List.new
+      @lista_c.pushVarious([100,60,20])
+      @listaI_b = Food::List.new
+      @listaI_b.pushVarious([@leche, @huevos, @nuez, @chocolate])
+      @listaI_c = Food::List.new
+      @listaI_c.pushVarious([@tofu, @chocolate, @nuez])
+      @plate = Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams)
+      @plate_b = Food::Plate.new("Tarta de chocolate", @listaI_b, @lista_b)
+      @plate_c = Food::Plate.new("Tofu con chocolate", @listaI_c, @lista_c)
+      @lista_plates = Food::List.new
+      @lista_plates.pushVarious([@plate, @plate_b, @plate_c])
+    end
+    it "Se comprueba el funcionamiento de collect" do
+      expect(@lista_plates.collect{|x| x.protein_percentage > 20.0}).to eq([true, true, false])
+    end
+  end
 end
