@@ -558,4 +558,20 @@ RSpec.describe Food::Impact_Plate do
       expect(@impact_plate.to_s).to eq("(Lentejas Deluxe: 10 gramos de Huevos, 20 gramos de Cordero, 30 gramos de Lentejas. CO2: 0.454, m2: 3.859)")
     end
   end
+  context "Comparaciones entre Impact_Plate" do
+    before :each do
+      @queso = Food::Food.new({:name => 'Queso', :protein => 25.0, :carbohydrates => 1.3, :lipids => 33.0, :gas => 11.0, :land_use => 41.0})
+      @leche = Food::Food.new({:name => 'Leche', :protein => 3.3, :carbohydrates => 4.8, :lipids => 3.2, :gas => 3.2, :land_use => 8.9})
+      @tofu = Food::Food.new({:name => 'Tofu', :protein => 8.0, :carbohydrates => 1.9, :lipids => 4.8, :gas => 2.0, :land_use => 2.2})
+      @lista_aux = Food::List.new
+      @lista_aux.pushVarious([@queso, @leche, @tofu])
+      @impact_plate_1 = Food::Impact_Plate.new("Lentejas Deluxe", @lista, @lista_grams)
+      @plate_1 = Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams)
+      @impact_plate_2 = Food::Impact_Plate.new("Tofu Bechamel", @lista_aux, @lista_grams)
+      @plate_2 = Food::Plate.new("Tofu Bechamel", @lista_aux, @lista_grams)
+    end
+    it "Impact_Plate posee el módulo Comparable" do
+      expect(Food::Impact_Plate.ancestors.select {|x| x.class == Module}).to eq([Comparable, Kernel])
+    end
+  end
 end
