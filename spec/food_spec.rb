@@ -518,10 +518,13 @@ RSpec.describe Food::Impact_Plate do
       @impact_plate = Food::Impact_Plate.new("Lentejas Deluxe", @lista, @lista_grams)
     end
     it "Impact_Plate tiene un método para calcular las emisiones diarias de gases de efecto invernadero necesarias para la creación del plato" do
-      expect(@impact_plate).to respond_to(:calculate_impact)
+      expect(@impact_plate).to respond_to(:co2_impact)
     end
     it "Impact_Plate tiene un método para calcular la estimación de terreno necesaria para la creación del plato" do
       expect(@impact_plate).to respond_to(:land_use)
+    end
+    it "Se obtiene el impacto en gases de efecto invernadero de un plato adecuamente" do
+      expect(@impact_plate.co2_impact).to eq(0.454)
     end
   end
 end
