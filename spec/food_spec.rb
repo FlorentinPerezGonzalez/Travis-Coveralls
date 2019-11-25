@@ -717,4 +717,28 @@ RSpec.describe Food::Impact_Plate do
       expect(plato_a == plato_b).to eq(false)
     end
   end
+  context "Se realizan comparaciones entre platos de la dieta locura por la carne" do
+    before :each do
+      @carne_de_vaca = Food::Food.new({:name => 'Carne de vaca', :protein => 21.1, :carbohydrates => 0.0, :lipids => 3.1, :gas => 50.0, :land_use => 164.0})
+      @pollo = Food::Food.new({:name => 'Pollo', :protein => 20.6, :carbohydrates => 0.0, :lipids => 5.6, :gas => 5.7, :land_use => 7.1})
+      @cerdo = Food::Food.new({:name => 'Cerdo', :protein => 21.5, :carbohydrates => 0.0, :lipids => 6.3, :gas => 7.6, :land_use => 11.0})
+      @lista = Food::List.new
+      @lista.pushVarious([100,100,100, 100, 200])
+      @lista_b = Food::List.new
+      @lista_b.pushVarious([300, 100, 200])
+      @listaI = Food::List.new
+      @listaI.pushVarious([@pollo, @cordero, @cerdo, @cerveza, @lentejas])
+      @listaI_b = Food::List.new
+      @listaI_b.pushVarious([@pollo, @queso, @cerveza])
+    end
+    it "Comparaciones del valor nutricional" do
+      plato_a = Food::Plate.new("Surtido de carnes con legumbres", @listaI, @lista)
+      plato_b = Food::Plate.new("Pollo con queso a la cerveza", @listaI_b, @lista_b)
+      expect(plato_a < plato_b).to eq(false)
+      expect(plato_a <= plato_b).to eq(false)
+      expect(plato_a > plato_b).to eq(true)
+      expect(plato_a > plato_b).to eq(true)
+      expect(plato_a == plato_b).to eq(false)
+    end
+  end
 end
