@@ -529,5 +529,8 @@ RSpec.describe Food::Impact_Plate do
     it "Se obtiene el la estimación de terreno necesario para producir un plato adecuamente" do
       expect(@impact_plate.land_use).to eq(3.859)
     end
+    it "Se obtiene una salida formateada correcta" do
+      expect(@impact_plate.to_s).to eq("(Lentejas Deluxe: 10 gramos de Huevos, 20 gramos de Cordero, 30 gramos de Lentejas. CO2: 0.454, m2: 3.859)")
+    end
   end
 end
