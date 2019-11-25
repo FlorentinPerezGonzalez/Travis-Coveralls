@@ -526,5 +526,8 @@ RSpec.describe Food::Impact_Plate do
     it "Se obtiene el impacto en gases de efecto invernadero de un plato adecuamente" do
       expect(@impact_plate.co2_impact).to eq(0.454)
     end
+    it "Se obtiene el la estimación de terreno necesario para producir un plato adecuamente" do
+      expect(@impact_plate.land_use).to eq(3.859)
+    end
   end
 end
