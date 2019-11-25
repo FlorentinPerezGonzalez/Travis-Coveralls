@@ -646,5 +646,14 @@ RSpec.describe Food::Impact_Plate do
       expect(plato_a > plato_b).to eq(false)
       expect(plato_a == plato_b).to eq(false)
     end
+    it "Comparación de impacto ambiental" do
+      plato_a = Food::Impact_Plate.new("Helado de chocolate con lentejas", @listaI, @lista)
+      plato_b = Food::Impact_Plate.new("Ración Completa Vasca", @listaI_b, @lista_b)
+      expect(plato_a < plato_b).to eq(true)
+      expect(plato_a <= plato_b).to eq(true)
+      expect(plato_a > plato_b).to eq(false)
+      expect(plato_a > plato_b).to eq(false)
+      expect(plato_a == plato_b).to eq(false)
+    end
   end
 end
