@@ -7,6 +7,12 @@ module Food
             @land_use = calculate_land_use
         end
 
+        def to_s
+            string = super.to_s
+            string[string.length-1] = ". "
+            string << "CO2: #{@co2_impact}, m2: #{@land_use})"
+        end
+
         private
 
         def calculate_impact
