@@ -686,4 +686,26 @@ RSpec.describe Food::Impact_Plate do
       expect(plato_a == plato_b).to eq(false)
     end
   end
+  context "Se realizan comparaciones entre platos de la dieta vegetaliana" do
+    before :each do
+      @cafe = Food::Food.new({:name => 'Cafe', :protein => 0.1, :carbohydrates => 0.0, :lipids => 0.0, :gas => 0.4, :land_use => 0.3})
+      @lista = Food::List.new
+      @lista.pushVarious([250,55,60])
+      @lista_b = Food::List.new
+      @lista_b.pushVarious([70,10,50,500])
+      @listaI = Food::List.new
+      @listaI.pushVarious([@tofu, @lentejas, @nuez])
+      @listaI_b = Food::List.new
+      @listaI_b.pushVarious([@chocolate, @nuez, @cafe, @tofu])
+    end
+    it "Comparaciones del valor nutricional" do
+      plato_a = Food::Plate.new("Lentejas con tofu", @listaI, @lista)
+      plato_b = Food::Plate.new("Tofu acompañado de chocolate con café", @listaI_b, @lista_b)
+      expect(plato_a < plato_b).to eq(true)
+      expect(plato_a <= plato_b).to eq(true)
+      expect(plato_a > plato_b).to eq(false)
+      expect(plato_a > plato_b).to eq(false)
+      expect(plato_a == plato_b).to eq(false)
+    end
+  end
 end
