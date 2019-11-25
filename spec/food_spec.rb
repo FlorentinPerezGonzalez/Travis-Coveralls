@@ -519,6 +519,7 @@ RSpec.describe Food::Impact_Plate do
     @chocolate = Food::Food.new({:name => 'Chocolate', :protein => 5.3, :carbohydrates => 47.0, :lipids => 30.0, :gas => 2.3, :land_use => 3.4})
     @queso = Food::Food.new({:name => 'Queso', :protein => 25.0, :carbohydrates => 1.3, :lipids => 33.0, :gas => 11.0, :land_use => 41.0})
     @leche = Food::Food.new({:name => 'Leche', :protein => 3.3, :carbohydrates => 4.8, :lipids => 3.2, :gas => 3.2, :land_use => 8.9})
+    @tofu = Food::Food.new({:name => 'Tofu', :protein => 8.0, :carbohydrates => 1.9, :lipids => 4.8, :gas => 2.0, :land_use => 2.2})
     @lista = Food::List.new
     @lista.pushVarious([@huevos, @cordero, @lentejas])
     @lista_grams = Food::List.new
@@ -563,7 +564,6 @@ RSpec.describe Food::Impact_Plate do
   end
   context "Comparaciones entre Impact_Plate" do
     before :each do
-      @tofu = Food::Food.new({:name => 'Tofu', :protein => 8.0, :carbohydrates => 1.9, :lipids => 4.8, :gas => 2.0, :land_use => 2.2})
       @lista_aux = Food::List.new
       @lista_aux.pushVarious([@queso, @leche, @tofu])
       @impact_plate_1 = Food::Impact_Plate.new("Lentejas Deluxe", @lista, @lista_grams)
@@ -649,6 +649,27 @@ RSpec.describe Food::Impact_Plate do
     it "Comparación de impacto ambiental" do
       plato_a = Food::Impact_Plate.new("Helado de chocolate con lentejas", @listaI, @lista)
       plato_b = Food::Impact_Plate.new("Ración Completa Vasca", @listaI_b, @lista_b)
+      expect(plato_a < plato_b).to eq(true)
+      expect(plato_a <= plato_b).to eq(true)
+      expect(plato_a > plato_b).to eq(false)
+      expect(plato_a > plato_b).to eq(false)
+      expect(plato_a == plato_b).to eq(false)
+    end
+  end
+  context "Se realizan comparaciones entre platos de la dieta vegetaria" do
+    before :each do
+      @lista = Food::List.new
+      @lista.pushVarious([85,15,5,15])
+      @lista_b = Food::List.new
+      @lista_b.pushVarious([100,60,20])
+      @listaI = Food::List.new
+      @listaI.pushVarious([@leche, @huevos, @nuez, @chocolate])
+      @listaI_b = Food::List.new
+      @listaI_b.pushVarious([@tofu, @chocolate, @nuez])
+    end
+    it "Comparaciones del valor nutricional" do
+      plato_a = Food::Plate.new("Tarta de chocolate con nueces", @listaI, @lista)
+      plato_b = Food::Plate.new("Tofú con chocolate con nueces", @listaI_b, @lista_b)
       expect(plato_a < plato_b).to eq(true)
       expect(plato_a <= plato_b).to eq(true)
       expect(plato_a > plato_b).to eq(false)
