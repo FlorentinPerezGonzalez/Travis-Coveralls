@@ -15,40 +15,39 @@ module Food
         end
 
         def protein_percentage
-            grams = 0.0
             protein_grams = 0.0
+            carbohydrates_grams = 0.0
+            lipids_grams = 0.0
             @ingredients.each_with_index do |x, index|
                 protein_grams = protein_grams + ((@ingredients_grams[index] * 100).round) * ((x.protein*100).round) / 10000000.0
+                carbohydrates_grams = carbohydrates_grams + ((@ingredients_grams[index] * 100).round) * ((x.carbohydrates*100).round) / 10000000.0
+                lipids_grams = lipids_grams + ((@ingredients_grams[index] * 100).round) * ((x.lipids*100).round) / 10000000.0
             end
-            for x in @ingredients_grams do
-                grams = grams + x
-            end
-            (protein_grams.round(2) / (grams.round(2))).truncate(3) * 100
+            (protein_grams.round(2) / (protein_grams.round(2) + carbohydrates_grams.round(2) + lipids_grams.round(2))).truncate(3) * 100
         end
 
         def carbohydrates_percentage
-            grams = 0.0
+            protein_grams = 0.0
             carbohydrates_grams = 0.0
+            lipids_grams = 0.0
             @ingredients.each_with_index do |x, index|
+                protein_grams = protein_grams + ((@ingredients_grams[index] * 100).round) * ((x.protein*100).round) / 10000000.0
                 carbohydrates_grams = carbohydrates_grams + ((@ingredients_grams[index] * 100).round) * ((x.carbohydrates*100).round) / 10000000.0
+                lipids_grams = lipids_grams + ((@ingredients_grams[index] * 100).round) * ((x.lipids*100).round) / 10000000.0            
             end
-            for x in @ingredients_grams do
-                grams = grams + x
-            end
-            puts carbohydrates_grams
-            (carbohydrates_grams.round(2) / (grams.round(2))).truncate(3) * 100
+            (carbohydrates_grams.round(2) / (protein_grams.round(2) + carbohydrates_grams.round(2) + lipids_grams.round(2))).truncate(3) * 100
         end
 
         def lipids_percentage
-            grams = 0.0
+            protein_grams = 0.0
+            carbohydrates_grams = 0.0
             lipids_grams = 0.0
             @ingredients.each_with_index do |x, index|
-                lipids_grams = lipids_grams + ((@ingredients_grams[index] * 100).round) * ((x.lipids*100).round) / 10000000.0
+                protein_grams = protein_grams + ((@ingredients_grams[index] * 100).round) * ((x.protein*100).round) / 10000000.0
+                carbohydrates_grams = carbohydrates_grams + ((@ingredients_grams[index] * 100).round) * ((x.carbohydrates*100).round) / 10000000.0
+                lipids_grams = lipids_grams + ((@ingredients_grams[index] * 100).round) * ((x.lipids*100).round) / 10000000.0            
             end
-            for x in @ingredients_grams do
-                grams = grams + x
-            end
-            (lipids_grams.round(2) / (grams.round(2))).truncate(3) * 100
+            (lipids_grams.round(2) / (protein_grams.round(2) + carbohydrates_grams.round(2) + lipids_grams.round(2))).truncate(3) * 100
         end
 
         def to_s
@@ -61,7 +60,13 @@ module Food
         end
 
         def calculate_TCV
-            
+            solution = 0.0
+            @ingredients.each_with_index do |x, index|
+                solution = solution + (((@ingredients_grams[index] * 100).round) * ((x.protein*100).round) / 10000000.0) * 4
+                solution = solution + (((@ingredients_grams[index] * 100).round) * ((x.carbohydrates*100).round) / 10000000.0) * 4
+                solution = solution + (((@ingredients_grams[index] * 100).round) * ((x.lipids*100).round) / 10000000.0) * 9
+            end
+            solution
         end
     end
 end
