@@ -69,5 +69,10 @@ module Food
             end
             solution
         end
+
+        def <=>(other)
+            return nil unless other.is_a?(Plate)
+            self.calculate_TCV <=> other.calculate_TCV
+        end
     end
 end
