@@ -798,5 +798,8 @@ RSpec.describe Food::Impact_Plate do
     it "Se comprueba el funcionamiento de select" do
       expect(@lista_plates.select{|x| x.co2_impact < 0.4}).to eq([@plate_b, @plate_c])
     end
+    it "Se comprueba el funcionamiento de max" do
+      expect(@lista_plates.max).to eq(@plate)
+    end
   end
 end
