@@ -1,5 +1,6 @@
 module Food
     class Plate
+        include Comparable
         attr_reader :ingredients, :ingredients_grams, :name
         def initialize(name, ingredients, ingredients_grams)
             raise TypeError "Se espera un string como primer argumento. Se obtuvo #{name.class.name}" unless name.is_a?(String)
