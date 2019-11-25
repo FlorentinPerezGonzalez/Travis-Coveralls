@@ -475,19 +475,22 @@ RSpec.describe Food::Plate do
       expect(@plate).to respond_to(:lipids_percentage)
     end
     it "Se obtiene el procentaje de proteínas correcto" do
-      expect(@plate.protein_percentage).to eq(1.9)
+      expect(@plate.protein_percentage).to eq(36.6)
     end
     it "Se obtiene el procentaje de lípidos correcto" do
-      expect(@plate.lipids_percentage).to eq(0.8)
+      expect(@plate.lipids_percentage).to eq(15.0)
     end
     it "Se obtiene el procentaje de carbohidratos correcto" do
-      expect(@plate.carbohydrates_percentage).to eq(2.6)
+      expect(@plate.carbohydrates_percentage).to eq(48.3)
     end
     it "Se obtiene el alimento formateado" do
       expect(@plate.to_s).to eq("(Lentejas Deluxe: 10 gramos de Huevos, 20 gramos de Cordero, 30 gramos de Lentejas)")
     end
     it "Existe un método para calcular V.C.T del plato" do
       expect(@plate).to respond_to(:calculate_TCV)
+    end
+    it "El T.C.V de un plato es el correcto" do
+      expect(@plate.calculate_TCV).to eq(15.492)
     end
   end
 end
