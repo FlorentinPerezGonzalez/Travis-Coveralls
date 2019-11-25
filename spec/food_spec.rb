@@ -496,25 +496,28 @@ RSpec.describe Food::Plate do
 end
 
 RSpec.describe Food::Impact_Plate do
-  it "Impact_Plate es hija de Plate" do
-    huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
-    cordero = Food::Food.new({:name => 'Cordero', :protein => 18.0, :carbohydrates => 0.0, :lipids => 17.0, :gas => 20.0, :land_use => 185.0})
-    lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
-    lista = Food::List.new
-    lista.pushVarious([huevos, cordero, lentejas])
-    lista_grams = Food::List.new
-    lista_grams.pushVarious([10, 20, 30])
-    expect(Food::Impact_Plate.superclass).to eq(Food::Plate) 
+  before :each do
+    @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
+    @cordero = Food::Food.new({:name => 'Cordero', :protein => 18.0, :carbohydrates => 0.0, :lipids => 17.0, :gas => 20.0, :land_use => 185.0})
+    @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
+    @lista = Food::List.new
+    @lista.pushVarious([@huevos, @cordero, @lentejas])
+    @lista_grams = Food::List.new
+    @lista_grams.pushVarious([10, 20, 30])
+  end
+  context "Naturaleza de Impact_Plate" do
+    it "Impact_Plate es hija de Plate" do
+      expect(Food::Impact_Plate.superclass).to eq(Food::Plate)
+    end
+    it "Impact_Plate también es un plato" do
+      expect(Food::Impact_Plate.new("Lentejas Deluxe", @lista, @lista_grams)).to be_kind_of(Food::Plate)
+    end
+    it "Los objetos Impact_Plate son instancian de Food::Impact_Plate" do
+      expect(Food::Impact_Plate.new("Lentejas Deluxe", @lista, @lista_grams)).to be_instance_of(Food::Impact_Plate)
+    end
   end
   context "Funcionamiento y estructura de la clase Impact_Plate" do
     before :each do
-      @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
-      @cordero = Food::Food.new({:name => 'Cordero', :protein => 18.0, :carbohydrates => 0.0, :lipids => 17.0, :gas => 20.0, :land_use => 185.0})
-      @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
-      @lista = Food::List.new
-      @lista.pushVarious([@huevos, @cordero, @lentejas])
-      @lista_grams = Food::List.new
-      @lista_grams.pushVarious([10, 20, 30])
       @impact_plate = Food::Impact_Plate.new("Lentejas Deluxe", @lista, @lista_grams)
     end
     it "Impact_Plate tiene un método para calcular las emisiones diarias de gases de efecto invernadero necesarias para la creación del plato" do
