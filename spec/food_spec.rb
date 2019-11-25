@@ -801,5 +801,8 @@ RSpec.describe Food::Impact_Plate do
     it "Se comprueba el funcionamiento de max" do
       expect(@lista_plates.max).to eq(@plate)
     end
+    it "Se comprueba el funcionamiento de min" do
+      expect(@lista_plates.min).to eq(@plate_c)
+    end
   end
 end
