@@ -453,6 +453,9 @@ RSpec.describe Food::Plate do
     it "Se obtienen correctamente los gramos de ingredientes de un plato" do
       expect(Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams).ingredients_grams.to_a).to eq([10, 20, 30])
     end
+    it "Plate tiene el modulo Comparable" do
+      expect(Food::Plate.ancestors.select {|x| x.class == Module}).to eq([Comparable, Kernel])
+    end
   end
   context "Prueba de método de Plate" do
     before :each do
@@ -512,7 +515,7 @@ RSpec.describe Food::Impact_Plate do
       expect(Food::Impact_Plate.new("Lentejas Deluxe", @lista, @lista_grams).class).to eq(Food::Impact_Plate)
     end
     it "Se comprueba que la jerarquía de Impact_Plate es la correcta" do
-      expect(Food::Impact_Plate.ancestors).to eq([Food::Impact_Plate, Food::Plate, Object, Kernel, BasicObject])
+      expect(Food::Impact_Plate.ancestors).to eq([Food::Impact_Plate, Food::Plate, Comparable, Object, Kernel, BasicObject])
     end
   end
   context "Funcionamiento y estructura de la clase Impact_Plate" do
