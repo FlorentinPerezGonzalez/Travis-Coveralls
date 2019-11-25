@@ -407,7 +407,7 @@ RSpec.describe Food::List do
       @lista.pushVarious([@huevos, @cordero, @lentejas])
     end
     it "El método collect funciona correctamente" do
-      expect((1..4).collect { @huevos }).to eq([@huevos, @huevos, @huevos, @huevos])
+      expect(@lista.collect{|x| x.protein > 20.0}).to eq([false,false,true])
     end
     it "El método max funciona correctamente" do
       expect(@lista.max).to eq(@lentejas)
