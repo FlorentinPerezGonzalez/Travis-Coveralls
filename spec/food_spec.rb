@@ -489,6 +489,26 @@ RSpec.describe Food::Plate do
       expect(@plate.calculate_TCV).to eq(15.492)
     end
   end
+  context "Comparaciones entre Plates" do
+    before :each do
+      @queso = Food::Food.new({:name => 'Queso', :protein => 25.0, :carbohydrates => 1.3, :lipids => 33.0, :gas => 11.0, :land_use => 41.0})
+      @leche = Food::Food.new({:name => 'Leche', :protein => 3.3, :carbohydrates => 4.8, :lipids => 3.2, :gas => 3.2, :land_use => 8.9})
+      @tofu = Food::Food.new({:name => 'Tofu', :protein => 8.0, :carbohydrates => 1.9, :lipids => 4.8, :gas => 2.0, :land_use => 2.2})
+      @lista_aux = Food::List.new
+      @lista_aux.pushVarious([@queso, @leche, @tofu])
+      @lista_grams = Food::List.new
+      @lista_grams.pushVarious([10, 20, 30])
+      @plate_2 = Food::Plate.new("Tofu Bechamel", @lista_aux, @lista_grams)
+      @plate = Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams)
+    end
+    it "Se comparan adecuadamente dos platos" do
+      expect(@plate < @plate_2).to eq(false)
+      expect(@plate > @plate_2).to eq(true)
+      expect(@plate == @plate_2).to eq(false)
+      expect(@plate <= @plate_2).to eq(false)
+      expect(@plate >= @plate_2).to eq(true)
+    end
+  end
 end
 
 RSpec.describe Food::Impact_Plate do
