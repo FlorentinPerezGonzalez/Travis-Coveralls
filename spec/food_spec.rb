@@ -772,5 +772,8 @@ RSpec.describe Food::Impact_Plate do
     it "Se comprueba el funcionamiento de select" do
       expect(@lista_plates.select{|x| x.protein_percentage > 20.0}).to eq([@plate, @plate_b])
     end
+    it "Se comprueba el funcionamiento de max" do
+      expect(@lista_plates.max).to eq(@plate_c)
+    end
   end
 end
