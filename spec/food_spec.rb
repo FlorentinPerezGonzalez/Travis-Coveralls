@@ -143,6 +143,8 @@ RSpec.describe Food do
       expect(@huevos == @huevos).to eq(true)
       expect(@huevos == @pollo).to eq(false)
       expect(@pollo <= @nuez).to eq(true)
+      expect(@pollo.between?(@huevos, @nuez)).to eq(false)
+      expect(@pollo.clamp(@huevos, @nuez)).to eq(@huevos)
     end
   end
 end #describe
