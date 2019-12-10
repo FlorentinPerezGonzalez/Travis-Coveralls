@@ -890,5 +890,15 @@ RSpec.describe Food::Impact_Plate do
     it "Nutritional_footprint devuelve el valor esperado para cada plato" do
       expect(@plateP8.nutritional_footprint).to eq(2.5)
     end
+    it "Se comparan platos a través de su huella nutricional" do
+      puts @plateP8.nutritional_footprint
+      puts @plateP8_2.nutritional_footprint
+      expect(@plateP8 < @plateP8_2).to eq(false)
+      expect(@plateP8 > @plateP8_2).to eq(true)
+      expect(@plateP8 <= @plateP8_2).to eq(false)
+      expect(@plateP8 >= @plateP8_2).to eq(true)
+      expect(@plateP8 == @plateP8_2).to eq(false)
+      expect(@plateP8 != @plateP8_2).to eq(true)
+    end
   end
 end
