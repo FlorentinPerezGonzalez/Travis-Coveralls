@@ -63,9 +63,9 @@ module Food
         def calculate_TCV
             solution = 0.0
             @ingredients.each_with_index do |x, index|
-                solution = solution + (((@ingredients_grams[index] * 100).round) * ((x.protein*100).round) / 10000000.0) * 4
-                solution = solution + (((@ingredients_grams[index] * 100).round) * ((x.carbohydrates*100).round) / 10000000.0) * 4
-                solution = solution + (((@ingredients_grams[index] * 100).round) * ((x.lipids*100).round) / 10000000.0) * 9
+                solution = solution + (((@ingredients_grams[index] * 100).round) * ((x.protein*100).round) / 1000000.0) * 4
+                solution = solution + (((@ingredients_grams[index] * 100).round) * ((x.carbohydrates*100).round) / 1000000.0) * 4
+                solution = solution + (((@ingredients_grams[index] * 100).round) * ((x.lipids*100).round) / 1000000.0) * 9
             end
             solution
         end

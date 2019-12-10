@@ -488,7 +488,7 @@ RSpec.describe Food::Plate do
       expect(@plate).to respond_to(:calculate_TCV)
     end
     it "El T.C.V de un plato es el correcto" do
-      expect(@plate.calculate_TCV).to eq(15.492)
+      expect(@plate.calculate_TCV).to eq(154.92)
     end
   end
   context "Comparaciones entre Plates" do
@@ -888,7 +888,7 @@ RSpec.describe Food::Impact_Plate do
       expect(@plateP8).to respond_to(:nutritional_footprint)
     end
     it "Nutritional_footprint devuelve el valor esperado para cada plato" do
-      expect(@plateP8.nutritional_footprint).to eq(1.5)
+      expect(@plateP8.nutritional_footprint).to eq(2.5)
     end
   end
 end

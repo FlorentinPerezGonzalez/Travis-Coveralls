@@ -19,7 +19,7 @@ module Food
         end
 
         def nutritional_footprint
-
+            (energy_indicator + carbon_indicator)/2.0
         end
 
         private
@@ -39,5 +39,26 @@ module Food
             end
             land_use
         end
+
+        def energy_indicator
+            if calculate_TCV < 670 then
+                return 1.0
+            elsif calculate_TCV > 830 then
+                return 3.0
+            else
+                return 2.0
+            end
+        end
+
+        def carbon_indicator
+            if (co2_impact * 1000) < 800 then
+                return 1.0
+            elsif (co2_impact * 1000) > 1200 then
+                return 3.0
+            else
+                return 2.0
+            end
+        end
+
     end
 end
