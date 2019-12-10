@@ -900,5 +900,8 @@ RSpec.describe Food::Impact_Plate do
       expect(@plateP8 == @plateP8_2).to eq(false)
       expect(@plateP8 != @plateP8_2).to eq(true)
     end
+    it "Se obtiene el plato con mayor huella nutricional de un menu" do
+      expect(@menu.max).to eq(@plateP8_3)
+    end
   end
 end
