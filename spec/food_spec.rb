@@ -863,4 +863,29 @@ RSpec.describe Food::Impact_Plate do
       expect(@lista_plates.sort).to eq([@plate_c, @plate_b, @plate])
     end
   end
+  context "Comparaciones entre platos considerando su huella nutricional" do
+    before :each do
+      @nuez = Food::Food.new({:name => 'Nuez', :protein => 20.0, :carbohydrates => 21.1, :lipids => 54.0, :gas => 0.3, :land_use => 7.9})
+      @listaP8 = Food::List.new
+      @listaP8.pushVarious([@huevos, @cordero, @lentejas])
+      @listaP8_grams = Food::List.new
+      @listaP8_grams.pushVarious([70, 100, 150])
+      @listaP8_2 = Food::List.new
+      @listaP8_2.pushVarious([@tofu, @lentejas, @nuez])
+      @listaP8_grams_2 = Food::List.new
+      @listaP8_grams_2.pushVarious([120, 100, 20])
+      @plateP8 = Food::Impact_Plate.new("Lentejas Deluxe", @listaP8, @listaP8_grams)
+      @plateP8_2 = Food::Impact_Plate.new("Lentejas con tofu", @listaP8_2, @listaP8_grams_2)
+      @listaP8_3 = Food::List.new
+      @listaP8_3.pushVarious([@chocolate, @queso, @nuez])
+      @listaP8_grams_3 = Food::List.new
+      @listaP8_grams_3.pushVarious([100, 130, 40])
+      @plateP8_3 = Food::Impact_Plate.new("Postre de queso", @listaP8_3, @listaP8_grams_3)
+      @menu = [@plateP8, @plateP8_2, @plateP8_3]
+      @menu_prices = [12.0,10.0,8.0]
+    end
+    it "Existe un método para calcular la huella nutricional de un plato" do
+      expect(@plateP8).to respond_to(:nutritional_footprint)
+    end
+  end
 end
