@@ -903,5 +903,8 @@ RSpec.describe Food::Impact_Plate do
     it "Se obtiene el plato con mayor huella nutricional de un menu" do
       expect(@menu.max).to eq(@plateP8_3)
     end
+    it "Se incrementan los precios de los platos del menú en proporción al plato con mayor huella nutricional" do
+      expect(@menu_prices.collect{|x, y = (@menu.max.nutritional_footprint*2/3.0)| x * y}). to eq([24.0, 20.0, 16.0])
+    end
   end
 end
