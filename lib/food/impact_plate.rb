@@ -18,6 +18,10 @@ module Food
             [@co2_impact, @land_use, self.calculate_TCV] <=> [other.co2_impact, other.land_use, other.calculate_TCV]
         end
 
+        def nutritional_footprint
+
+        end
+
         private
 
         def calculate_impact
