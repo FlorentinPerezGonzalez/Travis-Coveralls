@@ -887,5 +887,8 @@ RSpec.describe Food::Impact_Plate do
     it "Existe un método para calcular la huella nutricional de un plato" do
       expect(@plateP8).to respond_to(:nutritional_footprint)
     end
+    it "Nutritional_footprint devuelve el valor esperado para cada plato" do
+      expect(@plateP8.nutritional_footprint).to eq(1.5)
+    end
   end
 end
