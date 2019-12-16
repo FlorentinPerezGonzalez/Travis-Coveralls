@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Florent-C3-ADn+P-C3-A9rez+Gonz-C3-A1lez+13-2F11-2F19">Florentín Pérez González 13/11/19</a>
+    <li><a href="#label-Gema-3A+Food">Gema: Food</a>
+    <li><a href="#label-Instalaci-C3-B3n">Instalación</a>
+    <li><a href="#label-Uso">Uso</a>
+    <li><a href="#label-Desarrollo">Desarrollo</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Gemfile.html">Gemfile</a>
+  
+    <li><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./Guardfile.html">Guardfile</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./Rakefile.html">Rakefile</a>
+  
+    <li><a href="./bin/setup.html">setup</a>
+  
+    <li><a href="./food_gemspec.html">food.gemspec</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<h2 id="label-Florent-C3-ADn+P-C3-A9rez+Gonz-C3-A1lez+13-2F11-2F19">Florentín Pérez González 13/11/19<span><a href="#label-Florent-C3-ADn+P-C3-A9rez+Gonz-C3-A1lez+13-2F11-2F19">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h1 id="label-Gema-3A+Food">Gema: <a href="Food.html"><code>Food</code></a><span><a href="#label-Gema-3A+Food">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p><a href="Food.html"><code>Food</code></a> es una gema que permite la utilización de una clase cuyas instancias son, en la práctica, simulaciones de alimentos. Estos se caracterizarán por una definición basada en la cantidad de nutrientes (proteínas, lípidos y carbohidratos), así como la media de gases de efecto invernadero (en kg) generados para la producción del correspondiente alimento y los metros cuadrados necesarios para su producción anual.</p>
+
+<p>De igual manera, <a href="Food.html"><code>Food</code></a> también permite la utilización de una clase que recrea una lista doblemente enlazada, válida esta para contener cualquier serie de objetos, independientemente de su tipo. A su vez, también se permite la creación de objetos representativos de platos.</p>
+
+<h2 id="label-Instalaci-C3-B3n">Instalación<span><a href="#label-Instalaci-C3-B3n">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Para usar la gema basta con añadir la siguiente línea al archivo <a href="Gemfile.html">Gemfile</a> de la apliación:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&#39;food&#39;</span>
+</pre>
+
+<p>Posteriormente ejecute:</p>
+
+<pre>$ bundle</pre>
+
+<p>O realize manualmente la instalación:</p>
+
+<pre>$ gem install food</pre>
+
+<h2 id="label-Uso">Uso<span><a href="#label-Uso">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>La recreación de alimentos se realiza mediante la instanciación de objetos de la clase “Food”. Cada objeto requiere un único argumento para poder construirse. Este se trata de un “Hash” de 6 valores que especifican el nombre del alimento, sus proteínas; lípidos, carbohidratos, gases de efecto invernadero generados para su elaboración y los metros cuadrados de tierra necesarios.<br> En la siguiente línea se muestra un ejemplo:</p>
+
+<pre class="ruby"><span class="ruby-identifier">basic_food</span> = <span class="ruby-constant">Food</span><span class="ruby-operator">::</span><span class="ruby-constant">Food</span>.<span class="ruby-identifier">new</span>({<span class="ruby-value">:name</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;Huevos&#39;</span>, <span class="ruby-value">:protein</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">13.0</span>, <span class="ruby-value">:carbohydrates</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">1.1</span>, <span class="ruby-value">:lipids</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">11.0</span>, <span class="ruby-value">:gas</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">4.2</span>, <span class="ruby-value">:land_use</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">5.7</span>})
+</pre>
+
+<p>Una vez instanciado, cada objeto sirve como una representación abstracta de los alimentos que se hayan decidido recrear. El usuario puede, además, obtener los datos definidos para cada objeto a través de métodos “Getters” del mismo nombre que reciben los atributos. De igual manera, el usuario puede hacer uso del método <code>energetic_value</code> para obtener el aporte energético del alimento.</p>
+
+<p>Adicionalmente, el usuario puede hacer uso de <code>portion_impact()</code> para obtener el impacto medioambiental de una porción del alimento que represente el objeto. Este método devuelve un array de dos elementos numéricos donde el primero se corresponde con el impacto en gases de efecto invernadero y el segundo con la cantidad de metros cuadrados de tierra necesaria para la creación de la porción. Para su correcto funcionamiento, el método debe recibir un único atributo, un valor númerico que indica los gramos de proteínas que contendrá la supuesta porción.</p>
+
+<p>Para trabajar con las listas doblemente enlazadas, basta con crear una instancia de la clase “List”. Esta lista permite insertar (<code>push</code>, <code>unshift</code>) y extraer (<code>pop</code> <code>shift</code>) por ambos extremos de la misma (head y tail respectivamente). De igual manera, puede obtenerse su equivalente a un array mediante el método <code>to_a</code>. Adicionalmente, la lista permite realizar operaciones de búsqueda de elementos internos partiendo desde cualquier de sus extremos (<code>find_from_head</code>, <code>find_from_tail</code>), así como eliminar elementos no ubicados en los extremos bajo el mismo planteamiento (<code>erase_from_head</code>, <code>erase_from_tail</code>). List soporta, además, cualquier de los métodos propios del módulo Enumerable.</p>
+
+<p>Para trabajar con platos, se debe de tener en cuenta que existen dos posibilidades. Por un lado, se puede trabajar con la clase <code>Plate</code> que se especializa en contener y aportar la información nutricional de un plato. Por otro lado, existe la posibilidad de usar <code>Impact_Plate</code>, una clase en la misma jerarquía que <code>Plate</code> y que se distingue de esta por darle una mayor prioridad al impacto ambiental del plato que representa. A tal fin, posee métodos, <code>co2_impact</code> y <code>land_use</code>, que permiten obtener el impacto en gases de efecto invernadero y en terreno utilizado respectivamente. Además, <code>Impact_Plate</code> puede hacer las mismas funciones que <code>Plate</code>. No obstante, resultan importante aclarar que existe una diferencia a nivel de comparación de objetos: Los objetos <code>Plate</code> comparan entre ellos su valor nutricional, mientras que los objetos <code>Impact_Plate</code> comparan, en primera instancia, el impacto ambiental y, solo si este coincide, pasan a comparar el valor nutricional.</p>
+
+<p>Para crear un objeto <code>Plate</code> o <code>Impact_Plate</code> es necesario llamar al constructor (<code>new</code>) con tres argumentos: El nombre del plato, un objeto <code>List</code> con los alimentos que harán de ingredientes; y otro objeto <code>List</code> de igual tamaño que el anterior con las cantidades en gramos de cada alimento.</p>
+
+<h2 id="label-Desarrollo">Desarrollo<span><a href="#label-Desarrollo">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Las depedencias pueden ser instaladas mediante la ejecución de <code>bin/setup</code>. Las pruebas pueden ser ejecutadas mediante el <code>rake spec</code>. De igual manera puede hacerse uso de <code>bin/console</code> para trabajar experimentalmente de forma dinámica.</p>
+
+<p>Para instalar la gema en tu máquina local, ejecuta <code>bundle exec rake install</code>. Para lanzar una nueva versión, actualiza el número en <code>version.rb</code>, y ejecuta posteriormente <code>bundle exec rake release</code>, hecho que permitirá subir el archivo <code>.gem</code> a <a href="https://rubygems.org">rubygems.org</a>.</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

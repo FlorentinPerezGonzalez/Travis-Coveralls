@@ -1,0 +1,17 @@
+Mon, 16 Dec 2019 22:08:06 +0000
+./bin/setup	Tue, 10 Dec 2019 17:22:44 +0000
+./bin/console	Tue, 10 Dec 2019 17:22:44 +0000
+./food.gemspec	Tue, 10 Dec 2019 17:22:44 +0000
+./Gemfile.lock	Tue, 10 Dec 2019 17:22:44 +0000
+./README.md	Tue, 10 Dec 2019 17:22:44 +0000
+./spec/food_spec.rb	Tue, 10 Dec 2019 18:10:30 +0000
+./spec/spec_helper.rb	Tue, 10 Dec 2019 17:22:44 +0000
+./Guardfile	Tue, 10 Dec 2019 17:22:44 +0000
+./Gemfile	Tue, 10 Dec 2019 17:22:44 +0000
+./Rakefile	Tue, 10 Dec 2019 17:22:44 +0000
+./lib/food/impact_plate.rb	Mon, 16 Dec 2019 22:08:03 +0000
+./lib/food/fuente.rb	Mon, 16 Dec 2019 22:06:39 +0000
+./lib/food/lista.rb	Mon, 16 Dec 2019 22:04:41 +0000
+./lib/food/version.rb	Tue, 10 Dec 2019 17:22:44 +0000
+./lib/food/plate.rb	Mon, 16 Dec 2019 22:06:14 +0000
+./lib/food.rb	Mon, 16 Dec 2019 22:01:59 +0000

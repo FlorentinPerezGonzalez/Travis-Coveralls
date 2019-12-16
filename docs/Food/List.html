@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Food::List - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    <div id="sections-section" class="nav-section">
+  <h3>Sections</h3>
+
+  <ul class="link-list" role="directory">
+    
+      <li><a href="#5Buntitled-5D"></a></li>
+    
+      <li><a href="#B-C3-BAsqueda+en+la+lista.">Búsqueda en la lista.</a></li>
+    
+      <li><a href="#Manipulaci-C3-B3n+de+la+lista.">Manipulación de la lista.</a></li>
+    
+      <li><a href="#Utilidades">Utilidades</a></li>
+    
+      <li><a href="#Utilidades.">Utilidades.</a></li>
+    
+  </ul>
+</div>
+
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-5B-5D">#[]</a>
+    
+    <li ><a href="#method-i-clear">#clear</a>
+    
+    <li ><a href="#method-i-each">#each</a>
+    
+    <li ><a href="#method-i-erase_from_head">#erase_from_head</a>
+    
+    <li ><a href="#method-i-erase_from_tail">#erase_from_tail</a>
+    
+    <li ><a href="#method-i-find_from_head">#find_from_head</a>
+    
+    <li ><a href="#method-i-find_from_tail">#find_from_tail</a>
+    
+    <li ><a href="#method-i-pop">#pop</a>
+    
+    <li ><a href="#method-i-push">#push</a>
+    
+    <li ><a href="#method-i-pushVarious">#pushVarious</a>
+    
+    <li ><a href="#method-i-shift">#shift</a>
+    
+    <li ><a href="#method-i-to_a">#to_a</a>
+    
+    <li ><a href="#method-i-unshift">#unshift</a>
+    
+    <li ><a href="#method-i-unshiftVarious">#unshiftVarious</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Food::List">
+  <h1 id="class-Food::List" class="class">
+    class Food::List
+  </h1>
+
+  <section class="description">
+    
+<p>La clase <code>List</code> permite recrear una lista doblemente enlazada.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-head" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">head</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Nodo inicial de la lista</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-tail" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tail</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Nodo final de la lista</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+  </section>
+
+  <section id="B-C3-BAsqueda+en+la+lista." class="documentation-section">
+    
+    <header class="documentation-section-title">
+      <h2>
+        Búsqueda en la lista.
+      </h2>
+      <span class="section-click-top">
+        <a href="#top">&uarr; top</a>
+      </span>
+    </header>
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-B-C3-BAsqueda+en+la+lista.-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-find_from_head" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_from_head</span><span
+            class="method-args">(value)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que permite buscar un valor en la lista. La búsqueda se realiza desde la cabeza</p>
+
+<h3 id="method-i-find_from_head-label-Par-C3-A1metros">Parámetros<span><a href="#method-i-find_from_head-label-Par-C3-A1metros">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>value</code>: Dato contenido en el nodo.</p>
+</li></ul>
+
+<h3 id="method-i-find_from_head-label-Valor+de+retorno">Valor de retorno<span><a href="#method-i-find_from_head-label-Valor+de+retorno">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Dato que retorna:</p>
+<ul><li>
+<p><em>nil</em>: En caso de que el elemento no se encontrase en la lista.</p>
+</li><li>
+<p><em>Integer</em>: Posición del elemento en la lista desde la cabeza.</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="find_from_head-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_from_head</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">aux_node</span> = <span class="ruby-ivar">@head</span>
+  <span class="ruby-identifier">value_position</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">aux_node</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:value</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">value</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">value_position</span> = <span class="ruby-identifier">i</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">i</span> = <span class="ruby-identifier">i</span> <span class="ruby-value">+1</span>
+      <span class="ruby-identifier">aux_node</span> = <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:next</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">value_position</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-find_from_tail" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_from_tail</span><span
+            class="method-args">(value)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que permite buscar un valor en la lista. La búsqueda se realiza desde la cola</p>
+
+<h3 id="method-i-find_from_tail-label-Par-C3-A1metros">Parámetros<span><a href="#method-i-find_from_tail-label-Par-C3-A1metros">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>value</code>: Dato contenido en el nodo.</p>
+</li></ul>
+
+<h3 id="method-i-find_from_tail-label-Valor+de+retorno">Valor de retorno<span><a href="#method-i-find_from_tail-label-Valor+de+retorno">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Dato que retorna:</p>
+<ul><li>
+<p><em>nil</em>: En caso de que el elemento no se encontrase en la lista.</p>
+</li><li>
+<p><em>Integer</em>: Posición del elemento en la lista desde la cola.</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="find_from_tail-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_from_tail</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">aux_node</span> = <span class="ruby-ivar">@tail</span>
+  <span class="ruby-identifier">value_position</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">i</span> = <span class="ruby-value">-1</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">aux_node</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:value</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">value</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">value_position</span> = <span class="ruby-identifier">i</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">i</span> = <span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">aux_node</span> = <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:prev</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">value_position</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+  <section id="Manipulaci-C3-B3n+de+la+lista." class="documentation-section">
+    
+    <header class="documentation-section-title">
+      <h2>
+        Manipulación de la lista.
+      </h2>
+      <span class="section-click-top">
+        <a href="#top">&uarr; top</a>
+      </span>
+    </header>
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-Manipulaci-C3-B3n+de+la+lista.-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-clear" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clear</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que permite resetear la lista.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="clear-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clear</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-ivar">@tail</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">pop</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@size</span> = <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-erase_from_head" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">erase_from_head</span><span
+            class="method-args">(value)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que permite eliminar un nodo si este existe en la lista. Su búsqueda se realiza desde la cabeza.</p>
+
+<h3 id="method-i-erase_from_head-label-Par-C3-A1metros">Parámetros<span><a href="#method-i-erase_from_head-label-Par-C3-A1metros">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>value</code>: Dato contenido en el nodo.</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="erase_from_head-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 166</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">erase_from_head</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">aux_node</span> = <span class="ruby-ivar">@head</span>
+  <span class="ruby-keyword">while</span>((<span class="ruby-identifier">aux_node</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>)) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:value</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">value</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:next</span>].<span class="ruby-identifier">prev</span> = <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:prev</span>]
+      <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:prev</span>].<span class="ruby-identifier">next</span> = <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:next</span>]
+      <span class="ruby-identifier">aux_node</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-ivar">@size</span> = <span class="ruby-ivar">@size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">aux_node</span> = <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:next</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-erase_from_tail" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">erase_from_tail</span><span
+            class="method-args">(value)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que permite eliminar un nodo si este existe en la lista. Su búsqueda se realiza desde la cola.</p>
+
+<h3 id="method-i-erase_from_tail-label-Par-C3-A1metros">Parámetros<span><a href="#method-i-erase_from_tail-label-Par-C3-A1metros">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>value</code>: Dato contenido en el nodo.</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="erase_from_tail-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">erase_from_tail</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">aux_node</span> = <span class="ruby-ivar">@tail</span>
+    <span class="ruby-keyword">while</span> ((<span class="ruby-identifier">aux_node</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>)) <span class="ruby-keyword">do</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:value</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">value</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:next</span>].<span class="ruby-identifier">prev</span> = <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:prev</span>]
+        <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:prev</span>].<span class="ruby-identifier">next</span> = <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:next</span>]
+        <span class="ruby-identifier">aux_node</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-ivar">@size</span> = <span class="ruby-ivar">@size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">aux_node</span> = <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:prev</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-pop" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pop</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que permite extraer un nodo al final de la lista.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="pop-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@tail</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@tail</span>[<span class="ruby-value">:prev</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@tail</span>[<span class="ruby-value">:prev</span>]
+      <span class="ruby-ivar">@tail</span>[<span class="ruby-value">:next</span>] = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@tail</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-ivar">@head</span>[<span class="ruby-value">:next</span>] = <span class="ruby-keyword">nil</span>
+      <span class="ruby-ivar">@head</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@size</span> = <span class="ruby-ivar">@size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-push" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">push</span><span
+            class="method-args">(value)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que permite introducir un nodo al final de la lista.</p>
+
+<h3 id="method-i-push-label-Par-C3-A1metros">Parámetros<span><a href="#method-i-push-label-Par-C3-A1metros">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>value</code>: Dato contenido en el nodo.</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="push-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">push</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@head</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-ivar">@tail</span>)
+    <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@head</span>
+    <span class="ruby-ivar">@size</span> = <span class="ruby-value">1</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">aux_node</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-ivar">@tail</span>)
+    <span class="ruby-ivar">@tail</span>[<span class="ruby-value">:next</span>] = <span class="ruby-identifier">aux_node</span>
+    <span class="ruby-ivar">@tail</span> = <span class="ruby-identifier">aux_node</span>
+    <span class="ruby-ivar">@size</span> = <span class="ruby-ivar">@size</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-pushVarious" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pushVarious</span><span
+            class="method-args">(values)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que permite introducir varios nodos al final de la lista.</p>
+
+<h3 id="method-i-pushVarious-label-Par-C3-A1metros">Parámetros<span><a href="#method-i-pushVarious-label-Par-C3-A1metros">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>values</code>: Array con los datos que contendrán los nodos.</p>
+</li></ul>
+
+<h3 id="method-i-pushVarious-label-Excepciones">Excepciones<span><a href="#method-i-pushVarious-label-Excepciones">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>TypeError</code>: Si el argumento de no es un array.</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="pushVarious-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pushVarious</span>(<span class="ruby-identifier">values</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span> <span class="ruby-string">&quot;El argumento debe ser un array con los elementos a insertar&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">is_a?</span><span class="ruby-constant">Array</span>
+  <span class="ruby-identifier">values</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">push</span>(<span class="ruby-identifier">x</span>)}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-shift" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">shift</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que permite extraer un nodo al comienzo de la lista.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="shift-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">shift</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span>[<span class="ruby-value">:next</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-ivar">@head</span> = <span class="ruby-ivar">@head</span>[<span class="ruby-value">:next</span>]
+      <span class="ruby-ivar">@head</span>[<span class="ruby-value">:prev</span>] = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@head</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-ivar">@tail</span>[<span class="ruby-value">:prev</span>] = <span class="ruby-keyword">nil</span>
+      <span class="ruby-ivar">@tail</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@size</span> = <span class="ruby-ivar">@size</span> <span class="ruby-value">-1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-unshift" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unshift</span><span
+            class="method-args">(value)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que permite introducir un nodo al comienzo de la lista.</p>
+
+<h3 id="method-i-unshift-label-Par-C3-A1metros">Parámetros<span><a href="#method-i-unshift-label-Par-C3-A1metros">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>value</code>: Dato contenido en el nodo.</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="unshift-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">unshift</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@head</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-ivar">@tail</span>)
+    <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@head</span>
+    <span class="ruby-ivar">@size</span> = <span class="ruby-value">1</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">aux_node</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-ivar">@head</span>, <span class="ruby-keyword">nil</span>)
+    <span class="ruby-ivar">@head</span>[<span class="ruby-value">:prev</span>] = <span class="ruby-identifier">aux_node</span>
+    <span class="ruby-ivar">@head</span> = <span class="ruby-identifier">aux_node</span>
+    <span class="ruby-ivar">@size</span> = <span class="ruby-ivar">@size</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-unshiftVarious" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unshiftVarious</span><span
+            class="method-args">(values)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que permite introducir varios nodos al comienzo de la lista.</p>
+
+<h3 id="method-i-unshiftVarious-label-Par-C3-A1metros">Parámetros<span><a href="#method-i-unshiftVarious-label-Par-C3-A1metros">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>values</code>: Array con los datos que contendrán los nodos.</p>
+</li></ul>
+
+<h3 id="method-i-unshiftVarious-label-Excepciones">Excepciones<span><a href="#method-i-unshiftVarious-label-Excepciones">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>TypeError</code>: Si el argumento de no es un array.</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="unshiftVarious-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">unshiftVarious</span>(<span class="ruby-identifier">values</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span> <span class="ruby-string">&quot;El argumento debe ser un array con los elementos a insertar&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">is_a?</span><span class="ruby-constant">Array</span>
+  <span class="ruby-identifier">values</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">x</span>)}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+  <section id="Utilidades" class="documentation-section">
+    
+    <header class="documentation-section-title">
+      <h2>
+        Utilidades
+      </h2>
+      <span class="section-click-top">
+        <a href="#top">&uarr; top</a>
+      </span>
+    </header>
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-Utilidades-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-to_a" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_a</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que expresa la lista como un array.</p>
+
+<h3 id="method-i-to_a-label-Valor+de+retorno">Valor de retorno<span><a href="#method-i-to_a-label-Valor+de+retorno">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Dato que retorna: Array.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_a-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span>
+  <span class="ruby-identifier">aux_node</span> = <span class="ruby-ivar">@head</span>
+  <span class="ruby-identifier">a</span> = []
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">aux_node</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">aux_node</span>.<span class="ruby-identifier">value</span>
+    <span class="ruby-identifier">aux_node</span> = <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:next</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">a</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+  <section id="Utilidades." class="documentation-section">
+    
+    <header class="documentation-section-title">
+      <h2>
+        Utilidades.
+      </h2>
+      <span class="section-click-top">
+        <a href="#top">&uarr; top</a>
+      </span>
+    </header>
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-Utilidades.-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(index)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que permite acceder a un elemento de la lista en concreto.</p>
+
+<h3 id="method-i-5B-5D-label-Par-C3-A1metros">Parámetros<span><a href="#method-i-5B-5D-label-Par-C3-A1metros">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>index</code>: índice que se utilizará para encontrar al elemento deseado. Existen distintas posibilidades.</p>
+</li></ul>
+
+<h4 id="method-i-5B-5D-label-Valores+de+index+posibles-3A">Valores de index posibles:<span><a href="#method-i-5B-5D-label-Valores+de+index+posibles-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>:head o “head”: Se accede al nodo que conforma la cabeza.</p>
+</li><li>
+<p>:tail o “tail”: Se accede al nodo que conforma la cola.</p>
+</li><li>
+<p>Dato de tipo Integer positivo: Se accede al nodo que ocupa la posición indicada desde la cabeza.</p>
+</li><li>
+<p>Dato de tipo Integer negativo: Se accede al nodo que ocupa la posición indicada desde la cola.</p>
+</li></ul>
+
+<h3 id="method-i-5B-5D-label-Valores+de+retorno">Valores de retorno<span><a href="#method-i-5B-5D-label-Valores+de+retorno">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Dato que retorna:</p>
+<ul><li>
+<p><em>nil</em>: Si el index no se reconoce, ya sea por ser un valor inválido o por corresponderse con un nodo de imposible acceso al no estar definido. </p>
+</li><li>
+<p>_Valor del nodo_ al que se accede.</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">index</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:head</span>, <span class="ruby-string">&quot;head&quot;</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@head</span>[<span class="ruby-value">:value</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:tail</span>, <span class="ruby-string">&quot;tail&quot;</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@tail</span>[<span class="ruby-value">:value</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">index</span>.<span class="ruby-identifier">instance_of?</span><span class="ruby-constant">Integer</span>) <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">index</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">index</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-ivar">@size</span>) <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">aux_node</span> = <span class="ruby-ivar">@head</span>
+        <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+        <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">index</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">aux_node</span> = <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:next</span>]
+          <span class="ruby-identifier">i</span> = <span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:value</span>]
+      <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">index</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">index</span>.<span class="ruby-identifier">abs</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-ivar">@size</span>) <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">aux_node</span> = <span class="ruby-ivar">@tail</span>
+        <span class="ruby-identifier">i</span> = <span class="ruby-value">1</span>
+        <span class="ruby-identifier">aux_index</span> = <span class="ruby-identifier">index</span>.<span class="ruby-identifier">abs</span>
+        <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">aux_index</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">aux_node</span> = <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:prev</span>]
+          <span class="ruby-identifier">i</span> = <span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:value</span>]
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |node| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función que permite recorrer la totalidad de la lista. Puede ser utilizado por otras métodos para tareas que requieran trabajar con la lista en su conjunto..</p>
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/food/lista.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span> <span class="ruby-comment"># :yields: node</span>
+  <span class="ruby-identifier">aux_node</span> = <span class="ruby-ivar">@head</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">aux_node</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:value</span>]
+    <span class="ruby-identifier">aux_node</span> = <span class="ruby-identifier">aux_node</span>[<span class="ruby-value">:next</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
