@@ -939,3 +939,7 @@ RSpec.describe Food::Impact_Plate do
     end
   end
 end
+
+RSpec.describe Food::Menu do
+  
+end
