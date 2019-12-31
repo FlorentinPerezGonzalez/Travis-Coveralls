@@ -942,16 +942,52 @@ end
 
 RSpec.describe Food::Menu do
   describe "Pruebas sobre la clase Menu" do
+    before :each do
+      @pollo = Food::Food.new({:name => 'Pollo', :protein => 20.6, :carbohydrates => 0.0, :lipids => 5.6, :gas => 5.7, :land_use => 7.1})
+      @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
+      @queso = Food::Food.new({:name => 'Queso', :protein => 25.0, :carbohydrates => 1.3, :lipids => 33.0, :gas => 11.0, :land_use => 41.0})
+      @leche = Food::Food.new({:name => 'Leche', :protein => 3.3, :carbohydrates => 4.8, :lipids => 3.2, :gas => 3.2, :land_use => 8.9})
+      @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
+      @carne_de_vaca = Food::Food.new({:name => 'Carne de vaca', :protein => 21.1, :carbohydrates => 0.0, :lipids => 3.1, :gas => 50.0, :land_use => 164.0})
+      @lentejas_pollo = Food::Impact_Plate.new("Lentejas con pollo") do
+        alimento  :ingrediente => @lentejas,
+                    :gramos => 100
+        alimento  :ingrediente => @pollo,
+                    :gramos => 50
+      end
+
+      @postre_queso = Food::Impact_Plate.new("Postre de queso") do 
+        alimento  :ingrediente => @queso,
+                    :gramos => 50
+        alimento  :ingrediente => @leche,
+                    :gramos => 150
+      end
+
+      @combinado = Food::Impact_Plate.new("Combinado de la casa") do 
+        alimento  :ingrediente => @carne_de_vaca,
+                    :gramos => 80
+        alimento  :ingrediente => @huevos,
+                    :gramos => 30
+      end
+
+      @menu = Food::Menu.new("Menú del día") do 
+        componente  :plato => @lentejas_pollo,
+                    :precio => 5.99
+        componente  :plato => @postre_queso,
+                    :precio => 2.5
+        componente  :combinado => @combinado,
+                    :precio => 6.99
+      end
+    end
     it "Menu tiene un constructor con 1 argumentos" do
       expect(Food::Menu).to respond_to(:new).with(1).arguments
     end
     it "Menu tiene una función para obtener el precio total del menu" do
-      menu = Food::Menu.new("Menú del día")
-      expect(menu).to respond_to(:precio)
+      expect(@menu).to respond_to(:price)
     end
     it "Menu tiene una función para obtener el nombre del menu" do
-      menu = Food::Menu.new("Menú del día")
-      expect(menu).to respond_to(:name)
+      expect(@menu).to respond_to(:name)
     end
+
   end
 end
