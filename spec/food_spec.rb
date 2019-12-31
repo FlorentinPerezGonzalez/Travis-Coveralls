@@ -949,5 +949,9 @@ RSpec.describe Food::Menu do
       menu = Food::Menu.new("Menú del día")
       expect(menu).to respond_to(:precio)
     end
+    it "Menu tiene una función para obtener el nombre del menu" do
+      menu = Food::Menu.new("Menú del día")
+      expect(menu).to respond_to(:name)
+    end
   end
 end
