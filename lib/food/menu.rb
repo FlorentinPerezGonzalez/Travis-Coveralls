@@ -51,7 +51,7 @@ module Food
         private
 
         def calculate_price
-            
+            @price_list.reduce(:+)
         end
 
     end
