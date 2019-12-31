@@ -514,6 +514,7 @@ RSpec.describe Food::Plate do
 end
 
 RSpec.describe Food::Impact_Plate do
+=begin
   before :each do
     @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
     @cordero = Food::Food.new({:name => 'Cordero', :protein => 18.0, :carbohydrates => 0.0, :lipids => 17.0, :gas => 20.0, :land_use => 185.0})
@@ -564,7 +565,7 @@ RSpec.describe Food::Impact_Plate do
       expect(@impact_plate.to_s).to eq("(Lentejas Deluxe: 10 gramos de Huevos, 20 gramos de Cordero, 30 gramos de Lentejas. CO2: 0.454, m2: 3.859)")
     end
   end
-=begin
+
   context "Comparaciones entre Impact_Plate" do
     before :each do
       @lista_aux = Food::List.new
@@ -864,7 +865,6 @@ RSpec.describe Food::Impact_Plate do
       expect(@lista_plates.sort).to eq([@plate_c, @plate_b, @plate])
     end
   end
-=end
   context "Comparaciones entre platos considerando su huella nutricional" do
     before :each do
       @nuez = Food::Food.new({:name => 'Nuez', :protein => 20.0, :carbohydrates => 21.1, :lipids => 54.0, :gas => 0.3, :land_use => 7.9})
@@ -907,4 +907,5 @@ RSpec.describe Food::Impact_Plate do
       expect(@menu_prices.collect{|x, y = (@menu.max.nutritional_footprint*2/3.0)| x * y}). to eq([24.0, 20.0, 16.0])
     end
   end
+=end
 end
