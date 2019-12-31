@@ -942,8 +942,12 @@ end
 
 RSpec.describe Food::Menu do
   describe "Pruebas sobre la clase Menu" do
-    it "Plate tiene un constructor con 1 argumentos" do
+    it "Menu tiene un constructor con 1 argumentos" do
       expect(Food::Menu).to respond_to(:new).with(1).arguments
+    end
+    it "Menu tiene una función para obtener el precio total del menu" do
+      menu = Food::Menu.new("Menú del día")
+      expect(menu).to respond_to(:precio)
     end
   end
 end
