@@ -995,5 +995,8 @@ RSpec.describe Food::Menu do
     it "Se calcula el TCV correctamente" do
       expect(@menu.calculate_TCV).to eq(931.02)
     end
+    it "Se calcula el impacto ambiental correctamente" do
+      expect(@menu.calculate_impact).to eq([5.811, 18.601])
+    end
   end
 end
