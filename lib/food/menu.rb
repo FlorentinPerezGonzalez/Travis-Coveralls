@@ -43,7 +43,9 @@ module Food
         end
 
         def calculate_impact
-
+            co2_impact = @plate_list.collect{|x| x.co2_impact}.reduce(:+)
+            land_use = @plate_list.collect{|x| x.land_use}.reduce(:+)
+            [co2_impact,land_use]
         end
 
         private
