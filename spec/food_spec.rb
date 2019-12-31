@@ -988,6 +988,9 @@ RSpec.describe Food::Menu do
     it "Menu tiene una función para obtener el nombre del menu" do
       expect(@menu).to respond_to(:name)
     end
-
+    it "Menu tiene una funciones para calcular el TCV y el impacto ambiental" do
+      expect(@menu).to respond_to(:calculate_TCV)
+      expect(@menu).to respond_to(:calculate_impact)
+    end
   end
 end
