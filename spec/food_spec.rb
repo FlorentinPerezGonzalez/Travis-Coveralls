@@ -998,5 +998,8 @@ RSpec.describe Food::Menu do
     it "Se calcula el impacto ambiental correctamente" do
       expect(@menu.calculate_impact).to eq([5.811, 18.601])
     end
+    it "Se obtiene el precio total del menú" do
+      expect(@menu.price).to eq(15.48)
+    end
   end
 end
