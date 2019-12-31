@@ -39,7 +39,7 @@ module Food
         end
 
         def calculate_TCV
-
+            @plate_list.collect{|x| x.calculate_TCV}.reduce(:+)
         end
 
         def calculate_impact
