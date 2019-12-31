@@ -29,8 +29,17 @@ module Food
         #   @lista_grams = Food::List.new
         #   @lista_grams.pushVarious([10, 20, 30])
         #   @plate = Food::Impact_Plate.new("Lentejas Deluxe", @lista, @lista_grams)
-        def initialize(name, ingredients, ingredients_grams) #:notnew:
-            super(name, ingredients, ingredients_grams)
+        def initialize(name, &block) #:notnew:
+            @name = name
+            @ingredients = List.new
+            @ingredients_grams = List.new
+            if block_given?
+                if block.arity == 1
+                    yield self
+                else
+                    instance_eval(&block)
+                end
+            end
             @co2_impact =  calculate_impact
             @land_use = calculate_land_use
         end
@@ -67,7 +76,19 @@ module Food
             (energy_indicator + carbon_indicator)/2.0
         end
 
+        def alimento (food)
+            if food[:ingrediente] then
+                @ingredients.push(food[:ingrediente])
+                if food[:gramos] then
+                    @ingredients_grams.push(food[:gramos])
+                else
+                    @ingredients_grams.push(10)
+                end
+            end
+        end
+
         private
+
 
         def calculate_impact
             co2_kg = 0.0
