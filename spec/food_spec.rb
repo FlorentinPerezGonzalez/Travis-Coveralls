@@ -925,5 +925,17 @@ RSpec.describe Food::Impact_Plate do
       expect(impact_plate.lipids_percentage).to eq(6)
       expect(impact_plate.carbohydrates_percentage).to eq(53.1)
     end
+    it "Se calcula correctamente el TCV y el impacto ambiental del plato" do
+      impact_plate = Food::Impact_Plate.new("Lentejas con mucho pollo") do |r|
+        r.alimento  :ingrediente => @lentejas,
+                    :gramos => 100
+        r.alimento  :ingrediente => @pollo,
+                    :gramos => 200
+      end
+
+      expect(impact_plate.calculate_TCV).to eq(580.2)
+      expect(impact_plate.co2_impact).to eq(1.18)
+      expect(impact_plate.land_use).to eq(1.76)
+    end
   end
 end
