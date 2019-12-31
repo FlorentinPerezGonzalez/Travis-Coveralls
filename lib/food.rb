@@ -3,6 +3,7 @@ require "food/fuente"
 require "food/lista"
 require "food/plate"
 require "food/impact_plate"
+require "food/menu"
 
 #
 #== Autor: Florentín Pérez González
