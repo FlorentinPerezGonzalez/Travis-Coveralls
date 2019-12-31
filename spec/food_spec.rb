@@ -941,5 +941,9 @@ RSpec.describe Food::Impact_Plate do
 end
 
 RSpec.describe Food::Menu do
-  
+  describe "Pruebas sobre la clase Menu" do
+    it "Plate tiene un constructor con 1 argumentos" do
+      expect(Food::Menu).to respond_to(:new).with(1).arguments
+    end
+  end
 end
