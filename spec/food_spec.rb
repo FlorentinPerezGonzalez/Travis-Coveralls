@@ -908,4 +908,22 @@ RSpec.describe Food::Impact_Plate do
     end
   end
 =end
+  context "Pruebas sobre Impact_Plate (DSL)" do
+    before :each do
+      @lentejas = Food::Food.new({:name => 'Lentejas', :protein => 23.5, :carbohydrates => 52.0, :lipids => 1.4, :gas => 0.4, :land_use => 3.4})
+      @pollo = Food::Food.new({:name => 'Pollo', :protein => 20.6, :carbohydrates => 0.0, :lipids => 5.6, :gas => 5.7, :land_use => 7.1})
+    end
+    it "Funcionamiento de métodos básicos de la clase" do
+      impact_plate = Food::Impact_Plate.new("Lentejas con pollo") do |r|
+        r.alimento  :ingrediente => @lentejas,
+                    :gramos => 100
+        r.alimento  :ingrediente => @pollo,
+                    :gramos => 80
+      end
+
+      expect(impact_plate.protein_percentage).to eq(40.8)
+      expect(impact_plate.lipids_percentage).to eq(6)
+      expect(impact_plate.carbohydrates_percentage).to eq(53.1)
+    end
+  end
 end
