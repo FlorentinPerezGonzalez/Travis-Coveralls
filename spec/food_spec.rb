@@ -949,34 +949,34 @@ RSpec.describe Food::Menu do
       @leche = Food::Food.new({:name => 'Leche', :protein => 3.3, :carbohydrates => 4.8, :lipids => 3.2, :gas => 3.2, :land_use => 8.9})
       @huevos = Food::Food.new({:name => 'Huevos', :protein => 13.0, :carbohydrates => 1.1, :lipids => 11.0, :gas => 4.2, :land_use => 5.7})
       @carne_de_vaca = Food::Food.new({:name => 'Carne de vaca', :protein => 21.1, :carbohydrates => 0.0, :lipids => 3.1, :gas => 50.0, :land_use => 164.0})
-      @lentejas_pollo = Food::Impact_Plate.new("Lentejas con pollo") do
-        alimento  :ingrediente => @lentejas,
+      @lentejas_pollo = Food::Impact_Plate.new("Lentejas con pollo") do |r|
+        r.alimento  :ingrediente => @lentejas,
                     :gramos => 100
-        alimento  :ingrediente => @pollo,
+        r.alimento  :ingrediente => @pollo,
                     :gramos => 50
       end
 
-      @postre_queso = Food::Impact_Plate.new("Postre de queso") do 
-        alimento  :ingrediente => @queso,
-                    :gramos => 50
-        alimento  :ingrediente => @leche,
+      @postre_queso = Food::Impact_Plate.new("Postre de queso") do |r|
+        r.alimento  :ingrediente => @queso,
+                    :gramos => 80
+        r.alimento  :ingrediente => @leche,
                     :gramos => 150
       end
 
-      @combinado = Food::Impact_Plate.new("Combinado de la casa") do 
-        alimento  :ingrediente => @carne_de_vaca,
+      @combinado = Food::Impact_Plate.new("Combinado de la casa") do |r|
+        r.alimento  :ingrediente => @carne_de_vaca,
                     :gramos => 80
-        alimento  :ingrediente => @huevos,
+        r.alimento  :ingrediente => @huevos,
                     :gramos => 30
       end
 
-      @menu = Food::Menu.new("Menú del día") do 
-        componente  :plato => @lentejas_pollo,
-                    :precio => 5.99
-        componente  :plato => @postre_queso,
-                    :precio => 2.5
-        componente  :combinado => @combinado,
-                    :precio => 6.99
+      @menu = Food::Menu.new("Menú del día") do |r|
+        r.componente  :plato => @lentejas_pollo,
+                      :precio => 5.99
+        r.componente  :plato => @postre_queso,
+                      :precio => 2.5
+        r.componente  :plato => @combinado,
+                      :precio => 6.99
       end
     end
     it "Menu tiene un constructor con 1 argumentos" do
@@ -991,6 +991,9 @@ RSpec.describe Food::Menu do
     it "Menu tiene una funciones para calcular el TCV y el impacto ambiental" do
       expect(@menu).to respond_to(:calculate_TCV)
       expect(@menu).to respond_to(:calculate_impact)
+    end
+    it "Se calcula el TCV correctamente" do
+      expect(@menu.calculate_TCV).to eq(931.02)
     end
   end
 end
