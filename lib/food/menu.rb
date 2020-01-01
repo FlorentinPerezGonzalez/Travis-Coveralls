@@ -35,7 +35,7 @@ module Food
         end
 
         def to_s
-            
+            @plate_list.each_with_index.inject(@name){|cadena, (x,index)| cadena += "\n#{x.to_s}.\n\tPrecio: #{@price_list[index]} euros.\n\tValor nutricional: #{x.calculate_TCV}"} 
         end
 
         def calculate_TCV
