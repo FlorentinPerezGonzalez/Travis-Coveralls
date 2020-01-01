@@ -1001,5 +1001,8 @@ RSpec.describe Food::Menu do
     it "Se obtiene el precio total del menú" do
       expect(@menu.price).to eq(15.48)
     end
+    it "Se obtiene el menú formateado" do
+      expect(@menu.to_s).to eq("Menú del día\n(Lentejas con pollo: 100 gramos de Lentejas, 50 gramos de Pollo. CO2: 0.32499999999999996, m2: 0.6950000000000001).\n\tPrecio: 5.99 euros.\n\tValor nutricional: 381.0\n(Postre de queso: 80 gramos de Queso, 150 gramos de Leche. CO2: 1.3599999999999999, m2: 4.615).\n\tPrecio: 2.5 euros.\n\tValor nutricional: 413.56\n(Combinado de la casa: 80 gramos de Carne de vaca, 30 gramos de Huevos. CO2: 4.126, m2: 13.290999999999999).\n\tPrecio: 6.99 euros.\n\tValor nutricional: 136.45999999999998")
+    end
   end
 end
