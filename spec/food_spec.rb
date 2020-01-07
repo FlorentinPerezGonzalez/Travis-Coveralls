@@ -133,9 +133,9 @@ RSpec.describe Food do
       @nuez = Food::Food.new({:name => 'Nuez', :protein => 20.0, :carbohydrates => 21.1, :lipids => 54.0, :gas => 0.3, :land_use => 7.9})
       @pollo = Food::Food.new({:name => 'Pollo', :protein => 20.6, :carbohydrates => 0.0, :lipids => 5.6, :gas => 5.7, :land_use => 7.1})
     end
-    it "Food tiene el módulo Comparable" do
-      expect(Food::Food.ancestors.select {|x| x.class == Module}).to eq([Comparable, Kernel])
-    end
+    #it "Food tiene el módulo Comparable" do
+    #  expect(Food::Food.ancestors.select {|x| x.class == Module}).to eq([Comparable, Kernel])
+    #end
     it "Se compara un alimento adecuadamente con otro" do
       expect(@huevos < @nuez).to eq(true)
       expect(@nuez > @pollo).to eq(true)
@@ -455,9 +455,9 @@ RSpec.describe Food::Plate do
     it "Se obtienen correctamente los gramos de ingredientes de un plato" do
       expect(Food::Plate.new("Lentejas Deluxe", @lista, @lista_grams).ingredients_grams.to_a).to eq([10, 20, 30])
     end
-    it "Plate tiene el modulo Comparable" do
-      expect(Food::Plate.ancestors.select {|x| x.class == Module}).to eq([Comparable, Kernel])
-    end
+    #it "Plate tiene el modulo Comparable" do
+    #  expect(Food::Plate.ancestors.select {|x| x.class == Module}).to eq([Comparable, Kernel])
+    #end
   end
   context "Prueba de método de Plate" do
     before :each do
