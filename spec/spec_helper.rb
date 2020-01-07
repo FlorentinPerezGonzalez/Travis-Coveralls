@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 require 'bigdecimal'
 require "bundler/setup"
 require "food"
